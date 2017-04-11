@@ -35,7 +35,7 @@
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <main id="main">
     <div id="chart" ></div>
-    <!--<iframe style="display: none" id="iframe" scrolling="no" frameborder="0" src="../test/test01.html"></iframe>-->
+    <!--<iframe style="display: none" id="iframe" scrolling="no" frameborder="0" src="../tflatMap.htmlhtml"></iframe>-->
 </main>
 <!-- ECharts单文件引入 -->
 <script src="../asserts/echarts/echarts.js"></script>
@@ -237,7 +237,7 @@
         var $chart = $("#chart");
         var $iframe = $("#iframe");
         var sphere = '<div id="chart" ></div>';
-        var iframe = '<iframe id="iframe" scrolling="no" frameborder="0" src="../test/test01.html"></iframe>';
+        var iframe = '<iframe id="iframe" scrolling="no" frameborder="0" src="flatMap.html"></iframe>';
         $("#echarts2").click(function () {
             var $chart = $("#chart");
             if($chart.length > 0){
@@ -255,21 +255,7 @@
                 });
             }
         })
-/*
-        $("#echarts2").click(function () {
-            var $chart = $("#chart");
-            if($iframe.hide()){
-                $chart.hide();
-                $iframe.show();
-                alert("ping")
 
-            }else{
-                $iframe.hide();
-                $chart.show();
-                alert("qiu")
-            }
-        })
-*/
     })
 </script>
 <script>
