@@ -1,10 +1,10 @@
 /**
  * Created by Administrator on 2017/4/7 0007.
  */
-
 $(function () {
+	//123456789
 	
-    // 切换地图球形和平面的显示
+    //切换地图球形和平面的显示
     var txt = $("#code-source").text();
     var displaySphere;//当前状态
 
@@ -24,21 +24,8 @@ $(function () {
             localStorage.mapDisplay = "sphere";
         }
         document.location.reload();
-    });
+    })
 
-
-    require(['start'],function (start) {
-        // alert(start.test(5));
-        $("#bigger").click(function () {
-            start.zoom1(0,0,0,100,100)
-        })
-        $("#switch").click(function () {
-            // start.showFlat()
-        })
-        $("#echarts2").click(function () {
-
-        })
-    });
-
+    $("#")
 
 })

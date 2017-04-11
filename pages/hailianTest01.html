@@ -6,15 +6,26 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/example.css">
     <style>
+        body{
+            margin: 0;
+
+        }
+        #main{
+            width:60%;
+            margin:0 auto;
+        }
         #switch.btn {
-            position: fixed;
-            left:13em;
-            top: 10px;
+            position: relative;
+            left:3em;
+            top: -5px;
             padding:7px 10px;
             z-index: 1000;
             font-size: 1em;
-            background-color: #82BECD;
             border-radius: 5px;
+        }
+        iframe{
+            width:100%;
+            height:640px;
         }
     </style>
 
@@ -23,10 +34,12 @@
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <main id="main">
-    <div id="chart"></div>
+    <div id="chart" ></div>
+    <!--<iframe style="display: none" id="iframe" scrolling="no" frameborder="0" src="../test/test01.html"></iframe>-->
 </main>
 <!-- ECharts单文件引入 -->
 <script src="../asserts/echarts/echarts.js"></script>
+<script src="../asserts/js/require.js"></script>
 <!-- 引入 ECharts-X 主文件 -->
 <script src="../asserts/echarts/echarts-x.js"></script>
 <script type="text/javascript">
@@ -34,7 +47,7 @@
     require.config({
         paths: {
             'echarts': '../dep/echarts/build',
-            'echarts-x': '../dep/echarts-x/build',
+            'echarts-x': '../dep/echarts-x/build'
         }
     });
     // 然后就可以动态加载图表进行绘制啦
@@ -51,6 +64,7 @@
 <header id="header">
     <h1><a href="">ECharts-X</a></h1>
     <div id="toolbar">
+        <button id="echarts2" class="btn">echarts2平面地图</button>
         <button id="bigger" class="btn">放大</button>
         <button id="smaller" class="btn">缩小</button>
     </div>
@@ -112,7 +126,7 @@
                     //   遍历航空公司名称显示图例
                     data: data.airlines.map(function (item,index,array) {
 //                        if(index <5){
-                        console.log("xiabiao:"+index+" "+item[0]);
+//                        console.log("xiabiao:"+index+" "+item[0]);
                         return item[0];
 //                        }else {
 //                            return false;
@@ -214,16 +228,55 @@
 </script>
 
 <script src="../asserts/js/jquery-2.2.4.js"></script>
+<script src="../js/flat.js"></script>
 <script src="../js/boot.js"></script>
 <script src="../js/main.js"></script>
+<script>
+    $(function () {
+        var $main = $("#main");
+        var $chart = $("#chart");
+        var $iframe = $("#iframe");
+        var sphere = '<div id="chart" ></div>';
+        var iframe = '<iframe id="iframe" scrolling="no" frameborder="0" src="../test/test01.html"></iframe>';
+        $("#echarts2").click(function () {
+            var $chart = $("#chart");
+            if($chart.length > 0){
+                $chart.remove();
+                $main.append(iframe)
+            }else{
+                $("#iframe").remove();
+                $main.append(sphere);
+                require(['start'],function (start) {
+                    setTimeout(function () {
+                        console.log($('#code-source').text())
+                        start.runCode($('#code-source').text())
+                    });
 
+                });
+            }
+        })
+/*
+        $("#echarts2").click(function () {
+            var $chart = $("#chart");
+            if($iframe.hide()){
+                $chart.hide();
+                $iframe.show();
+                alert("ping")
+
+            }else{
+                $iframe.hide();
+                $chart.show();
+                alert("qiu")
+            }
+        })
+*/
+    })
+</script>
 <script>
     if (document.location.href.indexOf('local') == -1) {
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb78830c9a5dad062d08b90b2bc0cf5da' type='text/javascript'%3E%3C/script%3E"));
     }
-</script>
-<script>
 </script>
 
 </body>
