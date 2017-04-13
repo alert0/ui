@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex test</title>
+    <style>
+        html,body{
+            margin:0;
+            height: 100%;
+        }
+        #content{
+            display: flex;
+            height:100%;
+            background-color: rgba(174, 174, 174, 0.39);
+            font-size: 0;
+            -webkit-text-size-adjust:none;
+        }
+        #content>div{
+            font-size: 16px;
+            display: inline-block;
+            outline: 1px dashed #666;
+            outline-offset: -1px;
+        }
+        #left{
+            flex: 3;
+            /*width:360em;*/
+            background-color: rgba(205, 92, 92, 0.29);
+        }
+        #middle{
+            flex: 1;
+            /*width:120em;*/
+            background-color: rgba(143, 188, 143, 0.29);
+        }
+        #right{
+            flex: 3;
+            /*width:360em;*/
+            background-color: rgba(135, 206, 235, 0.28);
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div id="left">left</div>
+    <div id="middle">middle</div>
+    <div id="right">right"</div>
+</div>
+<!--
+一共 7x3 个屏幕，
+每一块屏幕是1920x1080
+总共的大小就是13440x3240
+3/7的宽度是5760,
+-->
+
+<script src="../asserts/js/jquery-2.2.4.js"></script>
+<script>
+    $(function () {
+        var width = $(window).width();
+        $("#content").height(width*324/1344)
+    })
+</script>
+</body>
+</html>
