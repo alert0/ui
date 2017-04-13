@@ -16,35 +16,17 @@
 </head>
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="mapFlat"></div>
+<div id="main" style="width: 600px; height: 500px;"></div>
 
 <script src="../asserts/echarts/echarts-all.js"></script>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
 <script src="../asserts/js/require.js"></script>
-<script src="../js/flat.js"></script>
+<script src="../js/fromKeji.js"></script>
 <script>
     $(function () {
         var myChart = echarts.init(document.getElementById('mapFlat'));
         myChart.setOption(mapFlat());
 
-        //循环执行，每隔3秒换个地点显示刷新
-        window.setInterval(function () {
-            myChart.setOption({
-                legend: {
-//                    show:false,
-                    selected: {
-                        'shanghai Top10': false,
-                        'beijing Top10': true,
-                        'guangzhou Top10': false
-                    },
-                }
-                /*
-                 series: [{
-                 data: [542, 532, 746, 786, 986, 522, 635, 899, 666, 555, 543, 234]
-                 }]
-                 */
-            });
-        }, 3000);
     });
 
 </script>

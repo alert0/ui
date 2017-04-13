@@ -27,23 +27,28 @@ define("start", function (require) {
      return data+3;
      };*/
     var myChart = ec.init(document.getElementById('chart'));
-    // var jsCode = $('#code-source').text();
 
-    console.log(mapSphere.toString());
+    // console.log(mapSphere.toString());
     //这里需要去除因获取文本而定义成函数的额外字符串
     var jsCode = mapSphere.toString().replace("function mapSphere() {","")
     jsCode =jsCode.substring(0,jsCode.lastIndexOf("}"));
 
     setTimeout(function () {
-        runCode();
-    });
-    var runCode = function runCode() {
         myChart = ec.init(document.getElementById('chart'));
-        var func = new Function('myChart', 'require', jsCode);
-        func(myChart, require);
+        runCode(null);
+    });
+
+    var runCode = function runCode(opts) {
+
+        mapSphere(myChart);
+
+    }
+    var changeOpt = function () {
+        // myChart.setOption(opts);
     }
 
     return {
-        runCode:runCode
+        runCode:runCode,
+        changeOpt:changeOpt
     }
 });

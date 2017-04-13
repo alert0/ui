@@ -8,7 +8,7 @@
         body{
             margin: 0;
         }
-        #mapFlat{
+        #flatWorld{
             width: 100%;
             height:12em;
         }
@@ -16,19 +16,11 @@
 </head>
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="mapFlat"></div>
+<div id="flatWorld"></div>
 
 <script src="../asserts/echarts/echarts-all.js"></script>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<script src="../asserts/js/require.js"></script>
-<script src="../js/flat.js"></script>
-<script>
-    $(function () {
-            var myChart = echarts.init(document.getElementById('mapFlat'));
-            myChart.setOption(mapFlat());
+<script src="../js/flatWorld.js"></script>
 
-    })
-
-</script>
 </body>
 </html>

@@ -120,11 +120,12 @@ $(function(){
         worldMapChart.clear();
         getAjax(dataId);
     })
-*/getAjax(dataId);
-    function getAjax(data){
+*/getAjax();
+    function getAjax(){
         $.ajax({
             type:"get",
-            url:"/YIJIAN/map/newsreports?navigation="+data,
+            // url:"/YIJIAN/map/newsreports?navigation="+data,
+            url:"/YIJIAN/map/newsreports?navigation=",
             data:{},
             dataType:"json",
             success:function (result){

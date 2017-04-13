@@ -2,11 +2,15 @@
 
 1 查看文件修改状态
 git status 
+
 2 将本地所有修改文件进行提交
 git add *
+
 3 将修改内容提交到本地库 
 git commit -m '修改内容描述'
+
 4 先把远程库code更新到本地库
 git pull
+
 5 将本地库推送到远程仓库
 git push

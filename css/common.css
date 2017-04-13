@@ -1,62 +1,106 @@
+/* global CssReset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote {
+  margin: 0;
+  padding: 0;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+body,html{
+  width: 100%;
+  height: 100%;
+  font-family: "Microsoft yahei", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+fieldset, img {
+  border: 0;
+}
+iframe {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-y: hidden;
+}
+ul, ol, dl, li, dt, dd {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  line-height: 1;
+  font-weight: normal;/*这里是新增的*/
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+
 /*定义公共样式*/
+
 @font-face {/*fontinSansCR常规*/
   font-family: DIGITAL-Regular;
   src: url('../asserts/fonts/DIGITAL-Regular.ttf') format("truetype");
   font-weight: normal;
 }
-/*清除浮动*/
-.cf:after{
-  content: ".";
+.clear:after{/*清除浮动*/
+  content: "";
   display: block;
   clear: both;
   visibility: hidden;
   height: 0;
 }
-.cf{
+.clear{
   zoom: 1;/*为解决IE6，IE7的兼容性问题*/
 }
-
-
-
-
-
-*{
-  margin:0;
+.hidden{
+  display: none;
 }
-h1,h2,h3,h4,h5,h6{
-  font-weight: normal;
+.fl{
+  float: left;
 }
-body{
-  height: 100%;
-  font-family: "微软雅黑", sans-serif;
+.fr{
+  float: right;
 }
+
+
+/*整个页面布局*/
 #content{
   display: flex;
+  width:3186px;
   height:100%;
   background-color: rgba(174, 174, 174, 0.39);
-  font-size: 0;
-  -webkit-text-size-adjust:none;
   background: url("../img/bg_star.png");
 }
+@media (min-width: 13000px) {
+  #content{
+    width:100%;
+  }
+}
+
 #content>div{
   position: relative;
-  font-size: 10px;
-  display: inline-block;
   outline: 1px dashed #ccc;
   outline-offset: -1px;
 }
 #left{
   flex: 3;
-  /*width:360em;*/
   background-color: rgba(205, 92, 92, 0.29);
 }
-#middle{
-  flex: 1;
-  /*width:120em;*/
-  background-color: rgba(143, 188, 143, 0.29);
-}
 #right{
-  flex: 3;
-  /*width:360em;*/
+  flex: 4;
   background-color: rgba(135, 206, 235, 0.28);
 }
+
+#mask{
+  position: fixed;
+  width:100%;
+  height:100%;
+  z-index: 999999;
+  background: blue;
+}
+
+
+

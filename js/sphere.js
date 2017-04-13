@@ -1,4 +1,4 @@
-var mapSphere = function mapSphere() {
+var mapSphere = function mapSphere(myChart) {
     myChart.showLoading();
         $.ajax({
             url: '../data/hailianTest01.json',
@@ -42,8 +42,9 @@ var mapSphere = function mapSphere() {
                             return item[0];
                         }),
                         selected: {},
-                        x: 'left',
-                        orient: 'vertical',
+                        x: 'center',
+                        y:"bottom",
+                        // orient: 'vertical',
                         textStyle: {
                             color: 'white'
                         }
@@ -57,8 +58,8 @@ var mapSphere = function mapSphere() {
                         flat: false, /*是否使用平面图*/
                         flatAngle: 0,
                         mapLocation: {
-                            x: "22%",
-                            y: "top"
+                            x: "0%"
+                            // y: "top"
                         },
                         baseLayer: {
                             backgroundColor: '',

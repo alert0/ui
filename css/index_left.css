@@ -2,8 +2,8 @@
     text-align: center;
 }
 #left h1{
-    margin:.5em auto;
-    font-size: 1.4em;
+    margin:1em auto;
+    font-size: 1.6em;
     color: #66CCFE;
 }
 
@@ -29,21 +29,31 @@
     font-style: italic;
     color: orange;
 }
-
-#left .map{
-    width:70%;
-    height:66%;
-    /*outline: 1px solid yellow;*/
+#left .switchGroup{
+    height: 68%;
 }
-#left .map #chart{
-    height: 22em;
+#left .switch{
+    height:100%;
+    border:1px solid pink;
+}
+#left .mapArea{
+    width:60%;
+    height: 100%;
+    margin:0 auto;
+    outline: 1px solid yellow;
 }
 
-#left .map iframe{
+#left .flat .mapArea{
+    height:100%;
+}
+#left .sphere .mapArea{
+    /*height:100%;*/
+}
+
+#left .flat iframe{
     width:100%;
-    height:200px;
+    height:90%;
 }
-
 
 #left .btnGroup{
     text-align: center;
@@ -55,6 +65,11 @@
     width:3em;
 }
 
+#left #switchlegend{
+    position: absolute;
+    left: 10px;
+    bottom:10px;
+}
 
 
 

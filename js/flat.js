@@ -15,13 +15,14 @@ function mapFlat() {
                 formatter: '{b}'
             },
             legend: {
-                orient: 'vertical',
-                x: 'left',
-                data: ['北京 Top10', '上海 Top10', '广州 Top10'],
+                // orient: 'vertical',
+                x: 'center',
+                y:"bottom",
+                data: ['beijing Top10', 'shanghai Top10', 'guangzhou Top10'],
                 selectedMode: 'single',
                 selected: {
-                    '上海 Top10': false,
-                    '广州 Top10': false
+                    'beijing Top10': false,
+                    'guangzhou Top10': false
                 },
                 textStyle: {
                     color: '#fff'
@@ -39,6 +40,7 @@ function mapFlat() {
                     saveAsImage: {show: true}
                 }
             },
+/*
             dataRange: {
                 min: 0,
                 max: 100,
@@ -48,16 +50,17 @@ function mapFlat() {
                     color: '#fff'
                 }
             },
+*/
             series: [
                 {
-                    name: '全国',
+                    name: '世界',
                     type: 'map',
                     roam: true,
                     hoverable: false,
-                    mapType: 'china',
+                    mapType: 'world',
                     mapLocation: {
-                        x: "42%",
-                        y: "top"
+                        x: "0",
+                        // y: "top"
                     },
                     itemStyle: {
                         normal: {
@@ -351,9 +354,9 @@ function mapFlat() {
                     }
                 },
                 {
-                    name: '北京 Top10',
+                    name: 'beijing Top10',
                     type: 'map',
-                    mapType: 'china',
+                    mapType: 'world',
                     data: [],
                     markLine: {
                         smooth: true,
@@ -420,9 +423,9 @@ function mapFlat() {
                     }
                 },
                 {
-                    name: '上海 Top10',
+                    name: 'shanghai Top10',
                     type: 'map',
-                    mapType: 'china',
+                    mapType: 'world',
                     data: [],
                     markLine: {
                         smooth: true,
@@ -487,9 +490,9 @@ function mapFlat() {
                     }
                 },
                 {
-                    name: '广州 Top10',
+                    name: 'guangzhou Top10',
                     type: 'map',
-                    mapType: 'china',
+                    mapType: 'world',
                     data: [],
                     markLine: {
                         smooth: true,
