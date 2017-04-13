@@ -43,12 +43,15 @@ define("start", function (require) {
         mapSphere(myChart);
 
     }
-    var changeOpt = function () {
-        // myChart.setOption(opts);
+    var changeOpt = function (opts) {
+        myChart.setOption(opts);
     }
 
     return {
         runCode:runCode,
-        changeOpt:changeOpt
+        changeOpt:function (opts) {
+            myChart.setOption(opts);
+            console.log(myChart.getOption().legend.show)
+        }
     }
 });

@@ -58,17 +58,13 @@ $(function () {
             }
         }
     })
-/*
     require(['start'], function (start) {
-        setTimeout(function () {
             start.changeOpt({
                 legend: {
                     show: false
                 }
             })
-        });
     })
-*/
     //图例展开开关
  /*   $("#switchLegend").click(function () {
         if(myChart.getOption().legend.show){
