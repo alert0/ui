@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/rightBox.css">
+</head>
+<body>
+<div class="tab">
+    <ul>
+        <li class="tab-item">总状态</li>
+        <li class="tab-item">运营状态</li>
+        <li class="tab-item">数据结果</li>
+        <li class="tab-item">数据挖掘应用</li>
+    </ul>
+</div>
+<!--总状态-->
+<div class="box selected tatal_state">
+    <!--大数展现-->
+    <div class="datas_show">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!--完成率等-->
+    <div class="datas_rate">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!--echarts图-->
+    <div class="echarts_box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<!--运营状态-->
+<div class="box yunying_state">22</div>
+<!--数据结果-->
+<div class="box shuju_result">33</div>
+<!--数据挖掘应用-->
+<div class="box shuju_apply">44</div>
+</body>
+<script src="../asserts/js/jquery-2.2.4.js"></script>
+<script src="../asserts/echarts/echarts.js"></script>
+<script src="../js/manyEcharts.js"></script>
+<script>
+    $(function(){
+        $(".tab-item").mouseenter(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+
+            // 3. 获取到当前菜单的索引号
+            var index = $(this).index();
+
+            // 4. 通过索引号对应关系 让这个索引号对应的内容展示出来
+            //.selected display:block
+            $(".box:eq(" + index + ")").addClass("selected").siblings().removeClass("selected");
+        });
+
+    })
+</script>
+</html>
