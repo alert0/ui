@@ -18,11 +18,18 @@ function mapFlat() {
                 // orient: 'vertical',
                 x: 'center',
                 y:"bottom",
-                data: ['beijing Top10', 'shanghai Top10', 'guangzhou Top10'],
-                selectedMode: 'single',
+                data: ['北京', '上海', '广州','西安','','青岛','济南','烟台','菏泽'],
+                selectedMode: 'multiple',
                 selected: {
-                    'beijing Top10': false,
-                    'guangzhou Top10': false
+                    '北京': true,
+                    '上海': false,
+                    '广州': false,
+                    '西安': false,
+
+                    '青岛': true,
+                    '济南': false,
+                    '烟台': false,
+                    '菏泽': false
                 },
                 textStyle: {
                     color: '#fff'
@@ -193,47 +200,6 @@ function mapFlat() {
                             [{name: '广州'}, {name: '重庆'}],
                             [{name: '广州'}, {name: '长沙'}],
                             [{name: '广州'}, {name: '成都'}],
-                            [{name: '广州'}, {name: '常州'}],
-                            [{name: '广州'}, {name: '大连'}],
-                            [{name: '广州'}, {name: '福州'}],
-                            [{name: '广州'}, {name: '海口'}],
-                            [{name: '广州'}, {name: '呼和浩特'}],
-                            [{name: '广州'}, {name: '合肥'}],
-                            [{name: '广州'}, {name: '杭州'}],
-                            [{name: '广州'}, {name: '哈尔滨'}],
-                            [{name: '广州'}, {name: '舟山'}],
-                            [{name: '广州'}, {name: '银川'}],
-                            [{name: '广州'}, {name: '南昌'}],
-                            [{name: '广州'}, {name: '昆明'}],
-                            [{name: '广州'}, {name: '贵阳'}],
-                            [{name: '广州'}, {name: '兰州'}],
-                            [{name: '广州'}, {name: '拉萨'}],
-                            [{name: '广州'}, {name: '连云港'}],
-                            [{name: '广州'}, {name: '临沂'}],
-                            [{name: '广州'}, {name: '柳州'}],
-                            [{name: '广州'}, {name: '宁波'}],
-                            [{name: '广州'}, {name: '南京'}],
-                            [{name: '广州'}, {name: '南宁'}],
-                            [{name: '广州'}, {name: '南通'}],
-                            [{name: '广州'}, {name: '北京'}],
-                            [{name: '广州'}, {name: '上海'}],
-                            [{name: '广州'}, {name: '沈阳'}],
-                            [{name: '广州'}, {name: '西安'}],
-                            [{name: '广州'}, {name: '石家庄'}],
-                            [{name: '广州'}, {name: '汕头'}],
-                            [{name: '广州'}, {name: '青岛'}],
-                            [{name: '广州'}, {name: '济南'}],
-                            [{name: '广州'}, {name: '天津'}],
-                            [{name: '广州'}, {name: '太原'}],
-                            [{name: '广州'}, {name: '乌鲁木齐'}],
-                            [{name: '广州'}, {name: '温州'}],
-                            [{name: '广州'}, {name: '武汉'}],
-                            [{name: '广州'}, {name: '无锡'}],
-                            [{name: '广州'}, {name: '厦门'}],
-                            [{name: '广州'}, {name: '西宁'}],
-                            [{name: '广州'}, {name: '徐州'}],
-                            [{name: '广州'}, {name: '烟台'}],
-                            [{name: '广州'}, {name: '盐城'}]
                         ],
                     },
                     geoCoord: {
@@ -354,7 +320,7 @@ function mapFlat() {
                     }
                 },
                 {
-                    name: 'beijing Top10',
+                    name: '北京',
                     type: 'map',
                     mapType: 'world',
                     data: [],
@@ -380,11 +346,6 @@ function mapFlat() {
                             [{name: '北京'}, {name: '上海', value: 95}],
                             [{name: '北京'}, {name: '广州', value: 90}],
                             [{name: '北京'}, {name: '大连', value: 80}],
-                            [{name: '北京'}, {name: '南宁', value: 70}],
-                            [{name: '北京'}, {name: '南昌', value: 60}],
-                            [{name: '北京'}, {name: '拉萨', value: 50}],
-                            [{name: '北京'}, {name: '长春', value: 40}],
-                            [{name: '北京'}, {name: '包头', value: 30}],
                             [{name: '北京'}, {name: '重庆', value: 20}],
                             [{name: '北京'}, {name: '常州', value: 10}]
                         ]
@@ -412,18 +373,13 @@ function mapFlat() {
                             {name: '上海', value: 95},
                             {name: '广州', value: 90},
                             {name: '大连', value: 80},
-                            {name: '南宁', value: 70},
-                            {name: '南昌', value: 60},
-                            {name: '拉萨', value: 50},
-                            {name: '长春', value: 40},
-                            {name: '包头', value: 30},
                             {name: '重庆', value: 20},
                             {name: '常州', value: 10}
                         ]
                     }
                 },
                 {
-                    name: 'shanghai Top10',
+                    name: '上海',
                     type: 'map',
                     mapType: 'world',
                     data: [],
@@ -451,11 +407,6 @@ function mapFlat() {
                             [{name: '上海'}, {name: '广州', value: 80}],
                             [{name: '上海'}, {name: '郑州', value: 70}],
                             [{name: '上海'}, {name: '长春', value: 60}],
-                            [{name: '上海'}, {name: '重庆', value: 50}],
-                            [{name: '上海'}, {name: '长沙', value: 40}],
-                            [{name: '上海'}, {name: '北京', value: 30}],
-                            [{name: '上海'}, {name: '丹东', value: 20}],
-                            [{name: '上海'}, {name: '大连', value: 10}]
                         ]
                     },
                     markPoint: {
@@ -481,16 +432,11 @@ function mapFlat() {
                             {name: '广州', value: 80},
                             {name: '郑州', value: 70},
                             {name: '长春', value: 60},
-                            {name: '重庆', value: 50},
-                            {name: '长沙', value: 40},
-                            {name: '北京', value: 30},
-                            {name: '丹东', value: 20},
-                            {name: '大连', value: 10}
                         ]
                     }
                 },
                 {
-                    name: 'guangzhou Top10',
+                    name: '广州',
                     type: 'map',
                     mapType: 'world',
                     data: [],
@@ -515,11 +461,6 @@ function mapFlat() {
                         data: [
                             [{name: '广州'}, {name: '福州', value: 95}],
                             [{name: '广州'}, {name: '太原', value: 90}],
-                            [{name: '广州'}, {name: '长春', value: 80}],
-                            [{name: '广州'}, {name: '重庆', value: 70}],
-                            [{name: '广州'}, {name: '西安', value: 60}],
-                            [{name: '广州'}, {name: '成都', value: 50}],
-                            [{name: '广州'}, {name: '常州', value: 40}],
                             [{name: '广州'}, {name: '北京', value: 30}],
                             [{name: '广州'}, {name: '北海', value: 20}],
                             [{name: '广州'}, {name: '海口', value: 10}]
@@ -544,19 +485,270 @@ function mapFlat() {
                         },
                         data: [
                             {name: '福州', value: 95},
-                            {name: '太原', value: 90},
-                            {name: '长春', value: 80},
-                            {name: '重庆', value: 70},
-                            {name: '西安', value: 60},
-                            {name: '成都', value: 50},
                             {name: '常州', value: 40},
                             {name: '北京', value: 30},
                             {name: '北海', value: 20},
                             {name: '海口', value: 10}
                         ]
                     }
+                },
+                {
+                    name: '西安',
+                    type: 'map',
+                    mapType: 'world',
+                    data: [],
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true,
+                            scaleSize: 1,
+                            period: 30,
+                            color: '#fff',
+                            shadowBlur: 10
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 1,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 10
+                                }
+                            }
+                        },
+                        data: [
+                            [{name: '西安'}, {name: '福州', value: 95}],
+                            [{name: '西安'}, {name: '杭州', value: 95}],
+                        ]
+                    },
+                    markPoint: {
+                        symbol: 'emptyCircle',
+                        symbolSize: function (v) {
+                            return 10 + v / 10
+                        },
+                        effect: {
+                            show: true,
+                            shadowBlur: 0
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {show: false}
+                            },
+                            emphasis: {
+                                label: {position: 'top'}
+                            }
+                        },
+                        data: [
+                            {name: '福州', value: 95},
+                            {name: '杭州', value: 95},
+                        ]
+                    }
+                },
+                {
+                    name: '青岛',
+                    type: 'map',
+                    mapType: 'world',
+                    data: [],
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true,
+                            scaleSize: 1,
+                            period: 30,
+                            color: '#fff',
+                            shadowBlur: 10
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 1,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 10
+                                }
+                            }
+                        },
+                        data: [
+                            [{name: '青岛'}, {name: '福州', value: 95}],
+                            [{name: '青岛'}, {name: '西安', value: 95}],
+                        ]
+                    },
+                    markPoint: {
+                        symbol: 'emptyCircle',
+                        symbolSize: function (v) {
+                            return 10 + v / 10
+                        },
+                        effect: {
+                            show: true,
+                            shadowBlur: 0
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {show: false}
+                            },
+                            emphasis: {
+                                label: {position: 'top'}
+                            }
+                        },
+                        data: [
+                            {name: '福州', value: 95},
+                            {name: '西安', value: 95},
+                        ]
+                    }
+                },
+                {
+                    name: '济南',
+                    type: 'map',
+                    mapType: 'world',
+                    data: [],
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true,
+                            scaleSize: 1,
+                            period: 30,
+                            color: '#fff',
+                            shadowBlur: 10
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 1,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 10
+                                }
+                            }
+                        },
+                        data: [
+                            [{name: '济南'}, {name: '福州', value: 95}],
+                            [{name: '济南'}, {name: '西安', value: 95}],
+                        ]
+                    },
+                    markPoint: {
+                        symbol: 'emptyCircle',
+                        symbolSize: function (v) {
+                            return 10 + v / 10
+                        },
+                        effect: {
+                            show: true,
+                            shadowBlur: 0
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {show: false}
+                            },
+                            emphasis: {
+                                label: {position: 'top'}
+                            }
+                        },
+                        data: [
+                            {name: '福州', value: 95},
+                            {name: '西安', value: 95},
+                        ]
+                    }
+                },
+                {
+                    name: '烟台',
+                    type: 'map',
+                    mapType: 'world',
+                    data: [],
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true,
+                            scaleSize: 1,
+                            period: 30,
+                            color: '#fff',
+                            shadowBlur: 10
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 1,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 10
+                                }
+                            }
+                        },
+                        data: [
+                            [{name: '烟台'}, {name: '福州', value: 95}],
+                            [{name: '烟台'}, {name: '西安', value: 95}],
+                        ]
+                    },
+                    markPoint: {
+                        symbol: 'emptyCircle',
+                        symbolSize: function (v) {
+                            return 10 + v / 10
+                        },
+                        effect: {
+                            show: true,
+                            shadowBlur: 0
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {show: false}
+                            },
+                            emphasis: {
+                                label: {position: 'top'}
+                            }
+                        },
+                        data: [
+                            {name: '福州', value: 95},
+                            {name: '西安', value: 95},
+                        ]
+                    }
+                },
+                {
+                    name: '菏泽',
+                    type: 'map',
+                    mapType: 'world',
+                    data: [],
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true,
+                            scaleSize: 1,
+                            period: 30,
+                            color: '#fff',
+                            shadowBlur: 10
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 1,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 10
+                                }
+                            }
+                        },
+                        data: [
+                            [{name: '菏泽'}, {name: '福州', value: 95}],
+                            [{name: '菏泽'}, {name: '西安', value: 95}],
+                        ]
+                    },
+                    markPoint: {
+                        symbol: 'emptyCircle',
+                        symbolSize: function (v) {
+                            return 10 + v / 10
+                        },
+                        effect: {
+                            show: true,
+                            shadowBlur: 0
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {show: false}
+                            },
+                            emphasis: {
+                                label: {position: 'top'}
+                            }
+                        },
+                        data: [
+                            {name: '福州', value: 95},
+                            {name: '西安', value: 95},
+                        ]
+                    }
                 }
             ]
         };
         return option;
-};
+}
+

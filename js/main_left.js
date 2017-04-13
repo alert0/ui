@@ -58,29 +58,10 @@ $(function () {
             }
         }
     })
+/*
     require(['start'], function (start) {
-            start.changeOpt({
-                legend: {
-                    show: false
-                }
-            })
-    })
-    //图例展开开关
- /*   $("#switchLegend").click(function () {
-        if(myChart.getOption().legend.show){
-            myChart.setOption({
-                legend: {
-                    show: false
-                }
-            })
-        }else{
-            myChart.setOption({
-                legend: {
-                    show: true
-                }
-            })
-        }
-
+            start.changeOpt()
     })
 */
+
 })

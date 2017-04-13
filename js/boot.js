@@ -30,27 +30,31 @@ define("start", function (require) {
 
     // console.log(mapSphere.toString());
     //这里需要去除因获取文本而定义成函数的额外字符串
+/*
     var jsCode = mapSphere.toString().replace("function mapSphere() {","")
     jsCode =jsCode.substring(0,jsCode.lastIndexOf("}"));
-
+*/
+    var options;
     setTimeout(function () {
-        myChart = ec.init(document.getElementById('chart'));
-        runCode(null);
+        myChart.showLoading();
+        options = mapSphere();
+        console.log("options:"+mapSphere());
+        myChart.setOption(options);
+        myChart.hideLoading();
     });
 
-    var runCode = function runCode(opts) {
-
-        mapSphere(myChart);
-
-    }
-    var changeOpt = function (opts) {
-        myChart.setOption(opts);
-    }
 
     return {
-        runCode:runCode,
-        changeOpt:function (opts) {
-            myChart.setOption(opts);
+        changeOpt:function () {
+            myChart.dispose();
+
+            // options.legend.show = true;
+            myChart.setOption(options);
+            myChart.setOption({
+                legend: {
+                    show: true
+                }
+            });
             console.log(myChart.getOption().legend.show)
         }
     }
