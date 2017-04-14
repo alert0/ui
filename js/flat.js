@@ -35,6 +35,7 @@ function mapFlat() {
                     color: '#fff'
                 }
             },
+/*
             toolbox: {
                 show: true,
                 orient: 'vertical',
@@ -47,6 +48,7 @@ function mapFlat() {
                     saveAsImage: {show: true}
                 }
             },
+*/
 /*
             dataRange: {
                 min: 0,

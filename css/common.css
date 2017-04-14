@@ -64,7 +64,9 @@ a:hover {
 .fr{
   float: right;
 }
-
+.placeHolder{/*拖动时放置位置的背景色*/
+  background-color: rgba(0, 255, 167, 0.29);
+}
 
 /*整个页面布局*/
 #content{
@@ -91,7 +93,7 @@ a:hover {
 }
 #right{
   flex: 4;
-  background-color: rgba(135, 206, 235, 0.28);
+  /*background-color: rgba(135, 206, 235, 0.28);*/
 }
 
 #mask{

@@ -2,11 +2,9 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <title>海联地图模型</title>
+    <title>U-lab数据中心</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index_left.css">
-    <style>
-    </style>
 </head>
 <body>
 <!--
@@ -22,9 +20,8 @@
         <div class="switchGroup">
             <div class="switch sphere">
                 <div id="chart" class="mapArea">
-
+                    <!--球体地图位置-->
                 </div>
-                <button id="switchLegend">图例开关</button>
             </div>
             <div class="switch flat hidden">
                 <div class="numberInfo cf">
@@ -42,7 +39,7 @@
                     </div>
                 </div>
                 <div class="mapArea">
-                    <!--<iframe id="iframe" scrolling="no" frameborder="0" src="../pages/flatMap.html"></iframe>-->
+                    <!--平面地图位置-->
                 </div>
             </div>
         </div>
@@ -56,6 +53,7 @@
         <!--这里是后面4屏的代码-->
     </div>
 </div>
+
 <!--屏幕描述
 一共 7x3 个屏幕，
 每一块屏幕是1920x1080
@@ -65,9 +63,9 @@
 -->
 
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<!--<script src="../asserts/js/require.js"></script>-->
 <script src="../asserts/echarts/echarts.js"></script>
 <script src="../asserts/echarts/echarts-x.js"></script>
+<script src="../asserts/js/jquery.dragsort-0.5.2.js"></script>
 <script>
     // 路径配置
     require.config({
@@ -89,13 +87,20 @@
 <script src="../js/flat.js"></script>
 <script src="../js/boot.js"></script>
 <script src="../js/main_left.js"></script>
-<script>
-</script>
+<script src="../js/main_left.js"></script>
 <script>
     if (document.location.href.indexOf('local') == -1) {
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb78830c9a5dad062d08b90b2bc0cf5da' type='text/javascript'%3E%3C/script%3E"));
     }
+    $(function () {//拖动动作
+        $("#content").dragsort({
+            dragSelector: "#left,#right",
+            dragBetween: true,
+            dragEnd: function () {},
+            placeHolderTemplate: "<div class='placeHolder'><div></div></div>"
+        });
+    })
 </script>
 </body>
 </html>
