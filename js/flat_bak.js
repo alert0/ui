@@ -1,6 +1,6 @@
 function mapFlat() {
         var option = {
-            // backgroundColor: '#1b1b1b',
+            backgroundColor: '#1b1b1b',
             color: ['gold', 'aqua', 'lime'],
             title: {
                 text: '模拟迁徙',

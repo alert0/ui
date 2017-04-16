@@ -47,9 +47,9 @@
 
 <script src="../asserts/echarts/echarts-all.js"></script>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<script src="../asserts/js/require.js"></script>
+<!--<script src="../asserts/js/require.js"></script>-->
 
-<script src="../js/flat.js"></script>
+<script src="../js/flat_bak.js"></script>
 <script>
     $(function () {
         var myChart = echarts.init(document.getElementById('mapFlat'));
@@ -119,6 +119,9 @@
             }
             myChart.clear();
             myChart.setOption(opts);
+        });
+        $(window).resize(function () {
+            myChart.resize();
         });
 
     });
