@@ -12,12 +12,12 @@
     <script src="../asserts/js/browser.js"></script>
     <![endif]-->
     <style>
-        #mCharts_1,#mCharts_2,#mCharts_3,#mCharts_4,#mCharts_5,#mCharts_6,#mCharts_7,#mCharts_8,#mCharts_9,#main{
-            width:800px;
+        #mCharts_1, #mCharts_2, #mCharts_3, #mCharts_4, #mCharts_5, #mCharts_6, #mCharts_7, #mCharts_8, #mCharts_9, #mCharts_10, #mCharts_11 {
+            width: 800px;
             height: 600px;
         }
 
-</style>
+    </style>
 </head>
 <body>
 
@@ -41,11 +41,10 @@
 <div id="mCharts_7"></div>
 <div id="mCharts_8"></div>
 <div id="mCharts_9"></div>
-<div id="main">
-    <div id="echartTips"></div>
-</div>
-<!--echarts end-->
+<div id="mCharts_10"></div>
+<div id="mCharts_11"></div>
 
+<!--echarts end-->
 
 </body>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
@@ -53,20 +52,20 @@
 <script src="../asserts/echarts/echarts-3.5.2.js"></script>
 <script src="../js/manyEcharts.js"></script>
 <script>
-    $(function(){
+    $(function () {
         //时间
         var timer = "";
-        var days=new  Array ("日", "一", "二", "三", "四", "五", "六");
+        var days = new Array("日", "一", "二", "三", "四", "五", "六");
         timer = setInterval(function () {
             var myDate = new Date();
             var year = myDate.getFullYear(); //四位整数表示的年份
-            var month = myDate.getMonth()+1; //月
+            var month = myDate.getMonth() + 1; //月
             var date = myDate.getDate(); //日
             var day = myDate.getDay(); //星期
             var hour = myDate.getHours() < 10 ? "0" + myDate.getHours() : myDate.getHours();
             var min = myDate.getMinutes() < 10 ? "0" + myDate.getMinutes() : myDate.getMinutes();
             var sec = myDate.getSeconds() < 10 ? "0" + myDate.getSeconds() : myDate.getSeconds();
-            var datetime=year+"-"+  month +"-"+date+"  星期"+days[day];
+            var datetime = year + "-" + month + "-" + date + "  星期" + days[day];
             var time = (hour + ":" + min + ":" + sec);
             $(".date").html(datetime) //所在位置
             $(".time").html(time)
@@ -79,17 +78,18 @@
                 data: [{value: 290, name: '加拿大'}, {value: 380, name: '美国'}, {
                     value: 450, name: '德国'
                 }, {value: 500, name: '中国'}, {value: 310, name: '俄罗斯'}]
-            }]
+            }],
+            color: ["rgba(23,144,207,1)", "rgba(23,144,207,0.9)", "rgba(23,144,207,0.8)", "rgba(23,144,207,0.7)", "rgba(23,144,207,0.6)"],
         });
         //折线图
-        var lineEcharts=echarts.init(document.getElementById("mCharts_2"));
+        var lineEcharts = echarts.init(document.getElementById("mCharts_2"));
         lineEcharts.setOption(getLineEcharts());
         lineEcharts.setOption({
-            tooltip : {
+            tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
             },
 //            toolbox: {
 //                show : false,
@@ -101,87 +101,697 @@
 //                    saveAsImage : {show: true}
 //                }
 //            },
-            calculable : true,
-            xAxis : [
+            calculable: true,
+            xAxis: [
                 {
-                    type : 'category',
-                    boundaryGap : false,
-                    data : ['周一','周二','周三','周四','周五','周六','周日']
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
                 }
             ],
-            yAxis : [
+            yAxis: [
                 {
-                    type : 'value'
+                    type: 'value'
                 }
             ],
-            series : [
+            series: [
                 {
-                    name:'邮件营销',
-                    type:'line',
+                    name: '邮件营销',
+                    type: 'line',
                     stack: '总量',
-                    data:[120, 132, 101, 134, 90, 230, 210]
+                    data: [120, 132, 101, 134, 90, 230, 210]
                 },
                 {
-                    name:'联盟广告',
-                    type:'line',
+                    name: '联盟广告',
+                    type: 'line',
                     stack: '总量',
-                    data:[220, 182, 191, 234, 290, 330, 310]
+                    data: [220, 182, 191, 234, 290, 330, 310]
                 },
                 {
-                    name:'视频广告',
-                    type:'line',
+                    name: '视频广告',
+                    type: 'line',
                     stack: '总量',
-                    data:[150, 232, 201, 154, 190, 330, 410]
+                    data: [150, 232, 201, 154, 190, 330, 410]
                 },
                 {
-                    name:'直接访问',
-                    type:'line',
+                    name: '直接访问',
+                    type: 'line',
                     stack: '总量',
-                    data:[320, 332, 301, 334, 390, 330, 320]
+                    data: [320, 332, 301, 334, 390, 330, 320]
                 },
                 {
-                    name:'搜索引擎',
-                    type:'line',
+                    name: '搜索引擎',
+                    type: 'line',
                     stack: '总量',
-                    data:[820, 932, 901, 934, 1290, 1330, 1320]
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
                 }
             ]
 
         });
         //柱状图
-        var barEcharts=echarts.init(document.getElementById("mCharts_3"));
+        var barEcharts = echarts.init(document.getElementById("mCharts_3"));
         barEcharts.setOption(getBarEcharts());
         barEcharts.setOption({
             title: {
                 text: '领域关注指数'
             },
-            yAxis:{
-                data: ["生物科学","新材料","农机装备","电力装备","新能源汽车","交通装备","海洋装备","航空航天","机器人","信息技术","工业强基","高端装备","绿色制造","智能产品","智能制造"]
+            yAxis: {
+                data: ["生物科学", "新材料", "农机装备", "电力装备", "新能源汽车", "交通装备", "海洋装备", "航空航天", "机器人", "信息技术", "工业强基", "高端装备", "绿色制造", "智能产品", "智能制造"]
             },
-            series:[{
-                data: [14,14,15,17,21,24,29,29,35,40,44,63,69,78,90]
+            series: [{
+                data: [14, 14, 15, 17, 21, 24, 29, 29, 35, 40, 44, 63, 69, 78, 90]
             }]
         });
         //面积图
-        var pieEcharts=echarts.init(document.getElementById("mCharts_4"));
+        var pieEcharts = echarts.init(document.getElementById("mCharts_4"));
         pieEcharts.setOption(getAreaEcharts());
+        pieEcharts.setOption({
+            legend: {
+                data: ['意向', '预购', '成交']
+            },
+            color: ["rgba(23,144,207,1)", "rgba(23,144,207,0.5)", "rgba(23,144,207,0.2)"],
+            xAxis: [{
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            }],
+            series: [
+                {
+                    name: '成交',
+                    type: 'line',
+                    smooth: false,
+                    itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                    data: [10, 12, 21, 54, 260, 830, 710]
+                },
+                {
+                    name: '预购',
+                    type: 'line',
+                    smooth: false,
+                    itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                    data: [30, 182, 434, 791, 390, 30, 10]
+                },
+                {
+                    name: '意向',
+                    type: 'line',
+                    smooth: false,
+                    itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                    data: [1320, 1132, 601, 234, 120, 90, 20]
+                }
+            ]
+        })
         //雷达图
-        var radarEcharts=echarts.init(document.getElementById("mCharts_5"));
+        var radarEcharts = echarts.init(document.getElementById("mCharts_5"));
         radarEcharts.setOption(getRadarEcharts());
+        radarEcharts.setOption({
+            legend: {
+                data: ['舍普琴科', '罗纳尔多']
+            },
+            color: ["rgba(23,144,207,1)", "rgba(23,144,207,0.5)"],
+            polar: [
+                {
+                    indicator: [
+                        {text: '进攻', max: 100},
+                        {text: '防守', max: 100},
+                        {text: '体能', max: 100},
+                        {text: '速度', max: 100},
+                        {text: '力量', max: 100},
+                        {text: '技巧', max: 100}
+                    ],
+                    radius: 100
+                }
+            ],
+            series: [
+                {
+                    name: '完全实况球员数据',
+                    data: [
+                        {
+                            value: [97, 12, 88, 94, 90, 86],
+                            name: '舍普琴科'
+                        },
+                        {
+                            value: [97, 32, 74, 95, 88, 72],
+                            name: '罗纳尔多'
+                        }
+                    ]
+                }
+            ],
+        })
         //折线图和柱状图
-        var lineAndbar=echarts.init(document.getElementById("mCharts_6"));
+        var lineAndbar = echarts.init(document.getElementById("mCharts_6"));
         lineAndbar.setOption(getLineAndBar());
-        //仪表盘
-        var gaugeEcharts=echarts.init(document.getElementById('mCharts_7'));
-        gaugeEcharts.setOption(getGaugeEcharts());
-        //多个仪表盘
-        var manyGaugeEcharts=echarts.init(document.getElementById('mCharts_8'));
-        manyGaugeEcharts.setOption(getManyGauge());
-        //圆环图
-        var yuanhuanEcharts=echarts.init(document.getElementById("mCharts_9"))
-        yuanhuanEcharts.setOption(getYuanhuan())
-    })
+        lineAndbar.setOption({
+            legend: {
+                data: ['蒸发量', '降水量', '平均温度']
+            },
+            color: ["rgba(23,144,207,1)", "rgba(23,144,207,0.5)", "orange"],
+            xAxis: [{
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+            }],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '水量',
+                    axisLabel: {
+                        formatter: '{value} ml'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '温度',
+                    axisLabel: {
+                        formatter: '{value} °C'
+                    }
+                }
+            ],
+            series: [
 
+                {
+                    name: '蒸发量',
+                    type: 'bar',
+                    data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                },
+                {
+                    name: '降水量',
+                    type: 'bar',
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                },
+                {
+                    name: '平均温度',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+                }
+            ]
+        });
+        //仪表盘
+        var gaugeEcharts = echarts.init(document.getElementById('mCharts_7'));
+        gaugeEcharts.setOption(getGaugeEcharts());
+        gaugeEcharts.setOption({
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        })
+        //多个仪表盘
+        var manyGaugeEcharts = echarts.init(document.getElementById('mCharts_8'));
+        manyGaugeEcharts.setOption(getManyGauge());
+        manyGaugeEcharts.setOption({
+            series: [
+                {
+                    name: '速度',
+                    type: 'gauge',
+                    z: 3,
+                    min: 0,
+                    max: 220,
+                    splitNumber: 11,
+                    axisLine: {            // 坐标轴线
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            width: 5
+                        }
+                    },
+                    axisTick: {            // 坐标轴小标记
+                        length: 10,        // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    splitLine: {           // 分隔线
+                        length: 15,         // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    title: {
+                        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                            fontWeight: 'bolder',
+                            fontSize: 14,
+                            fontStyle: 'italic'
+                        }
+                    },
+                    detail: {
+                        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                            fontWeight: 'bolder'
+                        }
+                    },
+                    data: [{value: 40, name: 'km/h'}]
+                },
+                {
+                    name: '转速',
+                    type: 'gauge',
+                    center: ['25%', '55%'],    // 默认全局居中
+                    radius: '50%',
+                    min: 0,
+                    max: 7,
+                    endAngle: 45,
+                    splitNumber: 7,
+                    axisLine: {            // 坐标轴线
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            width: 8
+                        }
+                    },
+                    axisTick: {            // 坐标轴小标记
+                        length: 12,        // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    splitLine: {           // 分隔线
+                        length: 20,         // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    pointer: {
+                        width: 5
+                    },
+                    title: {
+                        offsetCenter: [0, '-30%'],       // x, y，单位px
+                    },
+                    detail: {
+                        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                            fontWeight: 'bolder'
+                        }
+                    },
+                    data: [{value: 1.5, name: 'x1000 r/min'}]
+                },
+                {
+                    name: '油表',
+                    type: 'gauge',
+                    center: ['75%', '50%'],    // 默认全局居中
+                    radius: '50%',
+                    min: 0,
+                    max: 2,
+                    startAngle: 135,
+                    endAngle: 45,
+                    splitNumber: 2,
+                    axisLine: {            // 坐标轴线
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            color: [[0.2, '#ff4500'], [0.8, '#48b'], [1, '#228b22']],
+                            width: 8
+                        }
+                    },
+                    axisTick: {            // 坐标轴小标记
+                        splitNumber: 5,
+                        length: 10,        // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (v) {
+                            switch (v + '') {
+                                case '0' :
+                                    return 'E';
+                                case '1' :
+                                    return 'Gas';
+                                case '2' :
+                                    return 'F';
+                            }
+                        }
+                    },
+                    splitLine: {           // 分隔线
+                        length: 15,         // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    pointer: {
+                        width: 2
+                    },
+                    title: {
+                        show: false
+                    },
+                    detail: {
+                        show: false
+                    },
+                    data: [{value: 0.5, name: 'gas'}]
+                },
+                {
+                    name: '水表',
+                    type: 'gauge',
+                    center: ['75%', '50%'],    // 默认全局居中
+                    radius: '50%',
+                    min: 0,
+                    max: 2,
+                    startAngle: 315,
+                    endAngle: 225,
+                    splitNumber: 2,
+                    axisLine: {            // 坐标轴线
+                        lineStyle: {       // 属性lineStyle控制线条样式
+                            color: [[0.2, '#ff4500'], [0.8, '#48b'], [1, '#228b22']],
+                            width: 8
+                        }
+                    },
+                    axisTick: {            // 坐标轴小标记
+                        show: false
+                    },
+                    axisLabel: {
+                        formatter: function (v) {
+                            switch (v + '') {
+                                case '0' :
+                                    return 'H';
+                                case '1' :
+                                    return 'Water';
+                                case '2' :
+                                    return 'C';
+                            }
+                        }
+                    },
+                    splitLine: {           // 分隔线
+                        length: 15,         // 属性length控制线长
+                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                            color: 'auto'
+                        }
+                    },
+                    pointer: {
+                        width: 2
+                    },
+                    title: {
+                        show: false
+                    },
+                    detail: {
+                        show: false
+                    },
+                    data: [{value: 0.5, name: 'gas'}]
+                }
+            ]
+        })
+        //圆环图
+        var yuanhuanEcharts = echarts.init(document.getElementById("mCharts_9"));
+        yuanhuanEcharts.setOption(getYuanhuan());
+        yuanhuanEcharts.setOption({
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true
+                            },
+                            labelLine: {
+                                show: true
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                position: 'center',
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        }
+                    },
+                    data: [
+                        {value: 335, name: '直接访问'},
+                        {value: 310, name: '邮件营销'},
+                        {value: 234, name: '联盟广告'},
+                        {value: 135, name: '视频广告'},
+                        {value: 1548, name: '搜索引擎'}
+                    ]
+                }
+            ]
+        })
+        //同心圆
+        var centerPieEcharts = echarts.init(document.getElementById("mCharts_10"));
+        centerPieEcharts.setOption(getCenterPie());
+        var dataStyle = {  //是否显示引线和名字
+            normal: {
+                label: {
+                    show: true,
+                    position:"outside",
+//                    textStyle:{
+//                        color:"red"
+//                    }
+                },
+                labelLine: {
+                    show: true,
+//                    length:"1",
+//                    length2:"1"
+                },
+
+            }
+        };
+        var placeHolderStyle = {
+            normal: {
+                color: 'rgba(0,0,0,0)',
+                label: {show: false},
+                labelLine: {show: true}
+            },
+            emphasis: {  //剩余圆环的颜色
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        centerPieEcharts.setOption({
+
+            legend: {
+                orient: 'vertical',
+                // x : document.getElementById('main').offsetWidth / 2,
+                y: 45,
+                itemGap: 12,
+                data: ['68%的人表示过的不错', '29%的人表示生活压力很大', '3%的人表示“我姓曾”']
+            },
+            series: [
+                {
+                    name: '1',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [125, 150],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 68,
+                            name: '68%的人表示过的不错'
+                        },
+                        {
+                            value: 32,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                },
+                {
+                    name: '2',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [100, 125],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 29,
+                            name: '29%的人表示生活压力很大'
+                        },
+                        {
+                            value: 71,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                },
+                {
+                    name: '3',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [75, 100],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 3,
+                            name: '3%的人表示“我姓曾”'
+                        },
+                        {
+                            value: 97,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                }
+            ]
+        });
+        //环形图
+        var hunxingEcharts = echarts.init(document.getElementById("mCharts_11"));
+        hunxingEcharts.setOption(getHuanXing());
+        var radius = [40, 55]; //圆环大小
+        var labelTop = {
+            normal: {
+                label: {
+                    show: true,
+                    position: 'center',
+                    formatter: '{b}',
+                    textStyle: {
+                        baseline: 'bottom'
+                    }
+                },
+                labelLine: {
+                    show: false
+                }
+            }
+        };
+        var labelFromatter = {
+            normal: {
+                label: {
+                    formatter: function (params) {
+                        return 100 - params.value + '%'
+                    },
+                    textStyle: {
+                        baseline: 'top'
+                    }
+                }
+            },
+        };
+        var labelBottom = {
+            normal: {
+                color: '#ccc',  //剩余圆环的颜色
+                label: {
+                    show: true,
+                    position: 'center'
+                },
+                labelLine: {
+                    show: true
+                }
+            },
+            emphasis: {
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        hunxingEcharts.setOption({
+            legend: {
+                data: [
+                    'GoogleMaps', 'Facebook', 'Youtube', 'Google+', 'Weixin',
+                    'Twitter', 'Skype', 'Messenger', 'Whatsapp', 'Instagram'
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['10%', '30%'],
+                    radius: radius,
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['30%', '30%'],  //圆环的位置
+                    radius: radius,  //圆环的大小
+                    x: '20%', // for funnel    圆环的排列
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 56, itemStyle: labelBottom},
+                        {name: 'Facebook', value: 44, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '30%'],
+                    radius: radius,
+                    x: '40%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 65, itemStyle: labelBottom},
+                        {name: 'Youtube', value: 35, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['70%', '30%'],
+                    radius: radius,
+                    x: '60%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 70, itemStyle: labelBottom},
+                        {name: 'Google+', value: 30, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['90%', '30%'],
+                    radius: radius,
+                    x: '80%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 73, itemStyle: labelBottom},
+                        {name: 'Weixin', value: 27, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['10%', '70%'],
+                    radius: radius,
+                    y: '55%',   // for funnel
+                    x: '0%',    // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 78, itemStyle: labelBottom},
+                        {name: 'Twitter', value: 22, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['30%', '70%'],
+                    radius: radius,
+                    y: '55%',   // for funnel
+                    x: '20%',    // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 78, itemStyle: labelBottom},
+                        {name: 'Skype', value: 22, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '70%'],
+                    radius: radius,
+                    y: '55%',   // for funnel
+                    x: '40%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 78, itemStyle: labelBottom},
+                        {name: 'Messenger', value: 22, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['70%', '70%'],
+                    radius: radius,
+                    y: '55%',   // for funnel
+                    x: '60%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 83, itemStyle: labelBottom},
+                        {name: 'Whatsapp', value: 17, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['90%', '70%'],
+                    radius: radius,
+                    y: '55%',   // for funnel
+                    x: '80%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 89, itemStyle: labelBottom},
+                        {name: 'Instagram', value: 11, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+    })
 
 </script>
 </html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../asserts/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/centerLab.css">
+</head>
+<body>
+<div class="box">
+    <div class="header_box">
+        <div class="top_dropdown">
+            <ul class="tabs">
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="title_box">111111111111111111111</div>
+    <div class="order_box">
+        <div class="order_left fl">
+            <ul>
+                <li>11</li>
+                <li>11</li>
+                <li>
+                    <div id="pie1"></div>
+                </li>
+                <li>
+                    <div id="pie2"></div>
+                </li>
+                <li>
+                    <div id="pie3"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="order_right fl">
+            <div class="order_views">
+                <ul>
+                    <li>
+                        <div id="pie4"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                </ul>
+                <ul>
+                    <li>222</li>
+                    <li>222</li>
+                    <li>222</li>
+                    <li>222</li>
+                    <li>222</li>
+                    <li>222</li>
+                </ul>
+                <ul>
+                    <li>333</li>
+                    <li>333</li>
+                    <li>333</li>
+                    <li>333</li>
+                    <li>333</li>
+                    <li>333</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../asserts/js/jquery-2.2.4.js"></script>
+<script src="../../asserts/js/bootstrap.min.js"></script>
+<script src="../../asserts/echarts/echarts-all.js"></script>
+<script src="../../js/manyEcharts.js"></script>
+<script>
+    $(function () {
+        $('.dropdown-toggle').dropdown();
+        // Echarts
+        var pie1 = echarts.init(document.getElementById("pie1"));
+        var pie2 = echarts.init(document.getElementById("pie2"));
+        var pie3 = echarts.init(document.getElementById("pie3"));
+        var pie4=echarts.init(document.getElementById("pie4"));
+        var radius = [40, 50]; //圆环大小
+        var labelTop = {
+            normal: {
+                label: {
+                    show: true,
+                    position: 'center',
+                    formatter: '{b}',
+                    textStyle: {
+                        baseline: 'bottom'
+                    }
+                },
+                labelLine: {
+                    show: false
+                }
+            }
+        };
+        var labelFromatter = {
+            normal: {
+                label: {
+                    formatter: function (params) {
+                        return 100 - params.value + '%'
+                    },
+                    textStyle: {
+                        baseline: 'top'
+                    }
+                }
+            },
+        };
+        var labelBottom = {
+            normal: {
+                color: 'grey',  //剩余圆环的颜色
+                label: {
+                    show: true,
+                    position: 'center'
+                },
+                labelLine: {
+                    show: false
+                }
+            },
+            emphasis: {
+                show: true,
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        pie1.setOption(getHuanXing());
+        pie2.setOption(getHuanXing());
+        pie3.setOption(getHuanXing());
+        pie4.setOption(getHuanXing());
+
+        pie1.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps'
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['50%', '50%'],
+                    radius: radius,
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie2.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps'
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['50%', '50%'],
+                    radius: radius,
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie3.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps'
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['50%', '50%'],
+                    radius: radius,
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        })
+        pie4.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '50%'],
+                    radius: [10,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '50%'],
+                    radius: [10,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '50%'],
+                    radius: [10,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+
+    })
+</script>
+</html>
