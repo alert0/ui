@@ -76,8 +76,8 @@
         <div class="monitor_right fl">
             <div id="line_box"></div>
             <div class="radio_box">
-                <input type="radio" name="radiobutton" value="radiobutton" checked> 全不选
-                <input type="radio" name="radiobutton" value="radiobutton"> 全选
+                <input id="selectall" type="button" value="全不选" flag="1"/>
+                <!--<input  type="radio" name="radiobutton" value="radiobutton"> 全选-->
 
             </div>
 
@@ -93,7 +93,8 @@
 <script>
     var line_box=echarts.init(document.getElementById("line_box"));
     line_box.setOption(getLineEcharts());
-    line_box.setOption({
+
+    var option ={
         tooltip: {
             trigger: 'axis'
         },
@@ -166,7 +167,32 @@
             }
         ]
 
+    };
+    line_box.setOption(option);
+
+    //全选开关
+    var selectArr = line_box.getOption().legend[0].data;
+
+    $('#selectall').click(function(){
+        var flag = $(this).attr('flag');
+        if(flag == 1){
+            var val = false;
+            $(this).attr('flag',0);
+            $(this).val('全选中');
+        }else{
+            var val = true;
+            $(this).attr('flag',1);
+            $(this).val('全不选');
+        }
+        var obj = {};
+        for(var key in selectArr){
+            obj[selectArr[key]] = val;
+        }
+        option.legend.selected = obj;
+        line_box.setOption(option);
     });
+
+
 
 </script>
 </html>

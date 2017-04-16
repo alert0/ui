@@ -2,31 +2,48 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>ECharts</title>
+    <title>展开的平面地图</title>
     <style>
-        html,body {
+        html, body {
             margin: 0;
             width: 100%;
             height: 98%;
         }
 
         #mapFlat {
-            /*width: 100%;*/
             height: 100%;
         }
-        #switchLegend{
+
+        .btnGroup {
+            font-size: .8em;
+            text-align: center;
+            color: #fff;
             position: absolute;
-            left: 10px;
-            bottom:10px;
+            left: 12em;
+            bottom: 1.4em;
         }
 
+        button.btn {
+            color: #fff;
+            margin: 5px;
+            background-color: #286090;
+            border: 1px solid transparent;
+            padding: 4px 8px;
+            /*font-size: 14px;*/
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="mapFlat"></div>
+<div class="btnGroup">
+    <div class="selectAll">
+        <label><input type="checkbox">全选</label>
+    </div>
+    <button class="btn switchLegend">图例开关</button>
+</div>
 
-<button id="switchLegend">图例开关</button>
 
 <script src="../asserts/echarts/echarts-all.js"></script>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
@@ -38,45 +55,72 @@
         var myChart = echarts.init(document.getElementById('mapFlat'));
         myChart.setOption(mapFlat());
 
-
-
         //图例展开开关
-        $("#switchLegend").click(function () {
-            if(myChart.getOption().legend.show){
+        $(".switchLegend").click(function () {
+            if (myChart.getOption().legend.show) {
                 myChart.setOption({
                     legend: {
                         show: false
                     }
                 })
-            }else{
+            } else {
                 myChart.setOption({
                     legend: {
                         show: true
                     }
                 })
             }
+        });
 
-        })
-
-
-        /*//循环执行，每隔3秒换个地点显示刷新
-        window.setInterval(function () {
-            myChart.setOption({
-                legend: {
-                    show:false,
-                    selected: {
-                        'shanghai Top10': false,
-                        'beijing Top10': true,
-                        'guangzhou Top10': false
-                    },
+        //全选开关
+        $(".selectAll").find("input[type=checkbox]").click(function () {
+            var opt = myChart.getOption();
+            var citys = opt.legend.selected;
+            if ($(this).is(':checked')) {
+                for (var city in citys) {
+                    if (citys.hasOwnProperty(city)) {
+                        citys[city] = true;
+                    }
                 }
-                /!*
-                 series: [{
-                 data: [542, 532, 746, 786, 986, 522, 635, 899, 666, 555, 543, 234]
-                 }]
-                 *!/
-            });
-        }, 3000);*/
+            } else {
+                for (var city2 in citys) {
+                    if (citys.hasOwnProperty(city2)) {
+                        citys[city2] = false;
+                    }
+                }
+            }
+            opt.legend.selected = citys;
+            myChart.clear();//这一步很重要！
+            myChart.setOption(opt);
+        });
+
+        //上下每行只选择一个
+        var legendData1 = ['北京', '上海', '广州', '西安'];
+        var legendData2 = ['青岛', '济南', '烟台', '菏泽'];
+        var opts = myChart.getOption();
+        var ecConfig = echarts.config;
+        myChart.on(ecConfig.EVENT.LEGEND_SELECTED, function (params) {
+            if (legendData2.indexOf(params.target) === -1) {//第一行
+                for (var city in legendData1) {
+                    if (legendData1.hasOwnProperty(city)&&legendData1[city]===params.target) {
+                        opts.legend.selected[legendData1[city]] = true;
+                    }else{
+                        opts.legend.selected[legendData1[city]] = false;
+                    }
+                }
+            } else {//第二行
+                for (var city2 in legendData2) {
+                    if (legendData2.hasOwnProperty(city2)&&legendData2[city2]===params.target) {
+                        opts.legend.selected[legendData2[city2]] = true;
+                    }else{
+                        opts.legend.selected[legendData2[city2]] = false;
+                    }
+                }
+            }
+            myChart.clear();
+            myChart.setOption(opts);
+        });
+
     });
 
 </script>
