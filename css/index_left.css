@@ -25,7 +25,9 @@
     font-size: 1.6em;
     color: #66CCFE;
 }
-
+#left .numberInfo{
+    overflow: hidden;
+}
 #left .numberInfo .item{
     text-align: center;
     width:25%;
