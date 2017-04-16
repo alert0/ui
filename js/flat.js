@@ -966,29 +966,29 @@ var option = {
                 data: dataBase
             },
             markLine: {
-                smooth: true,
-                effect: {
+                smooth:false,
+                effect : {
                     show: true,
-                    scaleSize: 1,
-                    period: 1,
-                    color: '#fff',
-                    shadowBlur: 20
+                    scaleSize: 2,
+                    period: 3,
+                    color: '#ff0',
+                    shadowBlur: 10
                 },
-                itemStyle: {
+                itemStyle : {
                     normal: {
-                        color: 'rgba(0,0,0,0)',
-                        borderWidth: 1,
+                        color:"rgba(255,255,0,.2)",
+                        borderWidth:.5,
                         lineStyle: {
-
                             type: 'solid',
-                            shadowBlur: 30,
-                            // width:1
+                            shadowBlur: 0
                         }
                     }
                 },
                 data: [
                     [{name: '青岛'}, {name: '西雅图', value: 95}],
                     [{name: '青岛'}, {name: '波士顿', value: 95}],
+                    [{name: '西雅图'}, {name: '青岛', value: 95}],
+                    [{name: '波士顿'}, {name: '青岛', value: 95}],
                 ]
             },
             /*
