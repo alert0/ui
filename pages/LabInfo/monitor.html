@@ -98,15 +98,15 @@
         tooltip: {
             trigger: 'axis'
         },
-        grid:{
+        grid:{  //绘图区位置
             left:"20%"
         },
-        legend: {
+        legend: {  //图例位置
             left:0,
             orient:'vertical',
-            inactiveColor:"gray",  //
+            inactiveColor:"gray",  //图例关闭时的颜色
             textStyle:{
-                color:"white"
+                color:"#66ccff"
             },
             data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
@@ -131,7 +131,7 @@
         ],
         yAxis: [
             {
-                type: 'value'
+                type: 'value',
             }
         ],
         series: [
