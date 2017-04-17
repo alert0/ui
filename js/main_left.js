@@ -11,7 +11,7 @@ $(function () {
         })
     });
 
-    var $left = $("#left");
+    var $left = $("#l");
     var iframe = '<iframe id="iframe" scrolling="no" frameborder="0" src="flatMap.html" ></iframe>';
 
     //切换echarts-x和chearts的显示
@@ -50,18 +50,25 @@ $(function () {
                 .siblings().attr("src", $(this).siblings().attr("src").replace("on", "off"))
             var $chart = $("#chart");
             if ($left.find(".switch.sphere").is(":hidden")) {
-                $left.find(".switch.sphere").show().siblings().hide()
+                $left.find(".switch.sphere").css("display","flex").siblings().hide()
             } else {
                 $left.find(".flat .mapArea iframe").remove();
-                $left.find(".switch.flat").show().find(".mapArea").append(iframe).parent()
+                $left.find(".switch.flat").css("display","flex").find(".mapArea").append(iframe).parent()
                     .siblings().hide()
             }
         }
+    });
+    require(['echarts-all'],function () {
+        //平面地图右上角图表——专业能力
+
+        // console.log("echarts-all",echarts)
+        var chartFlatRT = echarts.init(document.getElementById("#myChart"));
+        // var optRT = getLineEcharts();
+
+        chartFlatRT.setOption(getLineEcharts());
+        chartFlatRT.setOption({
+            title:"111111"
+        })
     })
-/*
-    require(['start'], function (start) {
-            start.changeOpt()
-    })
-*/
 
 })

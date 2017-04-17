@@ -68,7 +68,7 @@ function mapFlat() {
                     hoverable: false,
                     mapType: 'world',
                     mapLocation: {
-                        x: "0",
+                        x: "20%",
                         // y: "top"
                     },
                     itemStyle: {

@@ -20,8 +20,8 @@
             text-align: center;
             color: #fff;
             position: absolute;
-            left: 12em;
-            bottom: 1.4em;
+            left: 40%;
+            bottom: 3%;
         }
 
         button.btn {
@@ -30,7 +30,6 @@
             background-color: #286090;
             border: 1px solid transparent;
             padding: 4px 8px;
-            /*font-size: 14px;*/
             border-radius: 4px;
         }
     </style>
@@ -38,7 +37,7 @@
 </head>
 <body>
 <div id="mapFlat"></div>
-//放置地图上的显示信息
+<!--放置地图上的显示信息-->
 <div id="echartTips"></div>
 <div class="btnGroup">
     <div class="selectAll">
@@ -54,8 +53,6 @@
 
 <script>
     $(function () {
-//        var myChart = echarts.init(document.getElementById('mapFlat'));
-//        myChart.setOption();
 
         //图例展开开关
         $(".switchLegend").click(function () {

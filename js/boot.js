@@ -38,7 +38,7 @@ define("start", function (require) {
     setTimeout(function () {
         myChart.showLoading();
         options = mapSphere();
-        console.log("options:"+mapSphere());
+        // console.log("options",mapSphere());
         myChart.setOption(options);
         myChart.hideLoading();
     });

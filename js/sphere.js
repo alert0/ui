@@ -85,11 +85,14 @@ function mapSphere() {
                         symbolSize: 15,
                         data: airports
                     },
+                    roam:false
+/*
                     roam: {
                         autoRotate: false,//是否自动旋转
                         autoRotateAfterStill: 5,
                         focus: 'China'
                     }
+*/
                 }]
             };
 

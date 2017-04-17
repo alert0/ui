@@ -559,7 +559,7 @@ function getGeoArr(data) {
     for (var i = 0; i < data.length; i++) {
         geo[data[i].name] = data[i].litude;
     }
-    console.log("geo"+geo);
+    // console.log("geo"+geo);
     return geo;
 }
 // 基于准备好的dom，初始化echarts实例
@@ -611,7 +611,7 @@ var option = {
     },
     legend: {
         // orient: 'vertical',
-        x: 'center',
+        x: '50%',
         y: "bottom",
         data: ['美国', '澳洲', '日本', '欧洲', '','俄罗斯' , '非洲', '拉丁美洲', '国内'],
         selectedMode: 'multiple',
@@ -641,9 +641,8 @@ var option = {
         roam: false,
         hoverable: false,
         mapType: 'world',
-        mapLocation: {
-            x: "0",
-            // y: "top"
+        mapLocation:{
+            x:'right',
         },
         itemStyle: {
             normal: {
@@ -1376,10 +1375,11 @@ var option = {
             roam: false,
             hoverable: false,
             mapType: 'world',
-            mapLocation: {
-                x: "0",
-                // y: "top"
+            mapLocation:{
+                x:'right',
             },
+
+/*
             itemStyle: {
                 normal: {
                     borderColor: 'rgba(100,149,237,1)',
@@ -1389,6 +1389,7 @@ var option = {
                     }
                 }
             },
+*/
             data: [],
             markPoint: {
                 symbol: 'emptyCircle',

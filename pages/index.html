@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title>U-lab数据中心</title>
+    <!--<link rel="stylesheet" href="../asserts/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index_left.css">
 </head>
@@ -13,17 +14,32 @@
 </div>
 -->
 <div id="content">
-    <div id="left">
+    <div id="l">
         <header>
             <h1>U-lab全球互联数据中心</h1>
         </header>
+        <div class="btnGroup">
+            <img class="sphere" src="../img/btn_sphere_on.png">
+            <img class="sphere" src="../img/btn_flat_off.png">
+        </div>
         <div class="switchGroup">
-            <div class="switch sphere">
+            <div class="switch sphere hidden">
+                <div class="sphere-right">
+                    <div class="sphere-left-top"></div>
+                    <div class="sphere-left-bottom"></div>
+                </div>
                 <div id="chart" class="mapArea">
-                    <!--球体地图位置-->
+                    <iframe src="" frameborder="0">
+                        <!--球体地图位置-->
+                    </iframe>
+                </div>
+                <div class="sphere-right">
+                    <div class="sphere-right-top"></div>
+                    <div class="sphere-right-bottom"></div>
                 </div>
             </div>
-            <div class="switch flat hidden">
+            <div class="switch flat">
+<!--电子表字体数据，暂时不用了
                 <div class="numberInfo cf">
                     <div class="item">
                         <h3>实验室总数</h3>
@@ -38,14 +54,25 @@
                         <div class="nb">98%</div>
                     </div>
                 </div>
+-->
                 <div class="mapArea">
                     <!--平面地图位置-->
                 </div>
+                <div class="flat-right">
+                    <div class="flat-right-top">
+                        <div class="professional">
+                            <h3>专业能力</h3>
+                            <div id="myChart"></div>
+                        </div>
+                    </div>
+                    <div class="flat-right-bottom">
+                        <div class="testPurpose">
+                            <h3>试验目的</h3>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <div class="btnGroup">
-            <img class="sphere" src="../img/btn_sphere_on.png">
-            <img class="sphere" src="../img/btn_flat_off.png">
         </div>
     </div>
     <!--<div id="middle"></div>-->
@@ -66,10 +93,13 @@
 <script src="../asserts/echarts/echarts.js"></script>
 <script src="../asserts/echarts/echarts-x.js"></script>
 <script src="../asserts/js/jquery.dragsort-0.5.2.js"></script>
+<script src="../asserts/js/require.js"></script>
 <script>
     // 路径配置
     require.config({
         paths: {
+            'echarts-3.5.2':'../asserts/echarts/echarts-3.5.2',
+            'echarts-all':'../asserts/echarts/echarts-all',
             'echarts': '../dep/echarts/build',
             'echarts-x': '../dep/echarts-x/build'
         }
@@ -84,8 +114,9 @@
     ])
 </script>
 <script src="../js/sphere.js"></script>
-<script src="../js/flat.js"></script>
 <script src="../js/boot.js"></script>
+<script src="../js/flat.js"></script>
+<script src="../js/manyEcharts.js"></script>
 <script src="../js/main_left.js"></script>
 <script>
     if (document.location.href.indexOf('local') == -1) {
