@@ -4,6 +4,7 @@
 
 // 折线图
 function getLineEcharts() {
+
     var option = {
         title: {
             left: 'center',
@@ -30,52 +31,24 @@ function getLineEcharts() {
             color: '#333',
             fontSize: 12
         },
-
         xAxis: {
             data: [],
-            boundaryGap: false,
             splitLine: {
                 show: false
             },
-            axisLine: {
-                show: false
-            },
-            axisLabel: {
-                show: true,
-                // rotate: 30,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
             axisTick: {
-                show: false,
+                show: true,
                 alignWithLabel: true,
                 lineStyle: {
-                    color: '#66ccff'
+                    color: '#cccccc'
                 }
             },
-
+            axisLabel: {
+                margin: 8
+            }
         },
         yAxis: {
-            axisLine: { //坐标轴
-                show: false
-            },
-            axisLabel: {   //坐标值
-                show: true,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            splitLine: {  //刻度线
-                show: true,
-                lineStyle: {
-                    color: '#123a67'
-                }
-            },
-            axisTick: {  //刻度值
-                show: false,
-            }
-
+            axisLabel: {}
         },
         series: []
     };
@@ -108,50 +81,19 @@ function getBarEcharts() {
             top: 30
         },
         xAxis: {
-            data: [],
-            boundaryGap: false,
+            type: 'value',
+            splitLine: {
+                lineStyle: {
+                    color: '#d5d5d5'
+                }
+            }
+        },
+        yAxis: {
+            type: 'category',
             splitLine: {
                 show: false
             },
-            axisLine: {
-                show: false
-            },
-            axisLabel: {
-                show: true,
-                // rotate: 30,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            axisTick: {
-                show: false,
-                alignWithLabel: true,
-                lineStyle: {
-                    color: '#66ccff'
-                }
-            },
-
-        },
-        yAxis: {
-            axisLine: { //坐标轴
-                show: false
-            },
-            axisLabel: {   //坐标值
-                show: true,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            splitLine: {  //刻度线
-                show: true,
-                lineStyle: {
-                    color: '#123a67'
-                }
-            },
-            axisTick: {  //刻度值
-                show: false,
-            }
-
+            data: []
         },
         series: [
             {
@@ -238,52 +180,18 @@ function getAreaEcharts() {
             }
         },
         calculable: true,
-        xAxis: {
-            data: [],
-            boundaryGap: false,
-            splitLine: {
-                show: false
-            },
-            axisLine: {
-                show: false
-            },
-            axisLabel: {
-                show: true,
-                // rotate: 30,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            axisTick: {
-                show: false,
-                alignWithLabel: true,
-                lineStyle: {
-                    color: '#66ccff'
-                }
-            },
-
-        },
-        yAxis: {
-            axisLine: { //坐标轴
-                show: false
-            },
-            axisLabel: {   //坐标值
-                show: true,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            splitLine: {  //刻度线
-                show: true,
-                lineStyle: {
-                    color: '#123a67'
-                }
-            },
-            axisTick: {  //刻度值
-                show: false,
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: []
             }
-
-        },
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
         series: []
     };
     return option;
@@ -350,52 +258,8 @@ function getLineAndBar() {
         legend: {
             data: []
         },
-        xAxis: {
-            data: [],
-            boundaryGap: false,
-            splitLine: {
-                show: false
-            },
-            axisLine: {
-                show: false
-            },
-            axisLabel: {
-                show: true,
-                // rotate: 30,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            axisTick: {
-                show: false,
-                alignWithLabel: true,
-                lineStyle: {
-                    color: '#66ccff'
-                }
-            },
-
-        },
-        yAxis: {
-            axisLine: { //坐标轴
-                show: false
-            },
-            axisLabel: {   //坐标值
-                show: true,
-                textStyle: {
-                    color: '#66ccff'
-                }
-            },
-            splitLine: {  //刻度线
-                show: true,
-                lineStyle: {
-                    color: '#123a67'
-                }
-            },
-            axisTick: {  //刻度值
-                show: false,
-            }
-
-        },
+        xAxis: [],
+        yAxis: [],
         series: []
     };
     return option;

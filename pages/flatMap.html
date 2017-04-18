@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
+<html style="width: 100%;height: 100%">
+<head lang="en">
+    <meta charset="UTF-8">
     <title>展开的平面地图</title>
+    <link rel="stylesheet" href="../asserts/echarts/flatMapAutoTip.css">
     <style>
         html, body {
             margin: 0;
@@ -19,8 +20,8 @@
             text-align: center;
             color: #fff;
             position: absolute;
-            left: 12em;
-            bottom: 1.4em;
+            left: 40%;
+            bottom: 3%;
         }
 
         button.btn {
@@ -29,14 +30,15 @@
             background-color: #286090;
             border: 1px solid transparent;
             padding: 4px 8px;
-            /*font-size: 14px;*/
             border-radius: 4px;
         }
     </style>
+
 </head>
 <body>
-<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="mapFlat"></div>
+<!--放置地图上的显示信息-->
+<div id="echartTips"></div>
 <div class="btnGroup">
     <div class="selectAll">
         <label><input type="checkbox">全选</label>
@@ -44,16 +46,13 @@
     <button class="btn switchLegend">图例开关</button>
 </div>
 
-
-<script src="../asserts/echarts/echarts-all.js"></script>
+</body>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<!--<script src="../asserts/js/require.js"></script>-->
+<script src="../asserts/echarts/echarts-all.js"></script>
+<script src="../js/flat.js"></script>
 
-<script src="../js/flat_bak.js"></script>
 <script>
     $(function () {
-        var myChart = echarts.init(document.getElementById('mapFlat'));
-        myChart.setOption(mapFlat());
 
         //图例展开开关
         $(".switchLegend").click(function () {
@@ -95,8 +94,8 @@
         });
 
         //上下每行只选择一个
-        var legendData1 = ['北京', '上海', '广州', '西安'];
-        var legendData2 = ['青岛', '济南', '烟台', '菏泽'];
+        var legendData1 = ['美国', '澳洲', '日本', '欧洲'];
+        var legendData2 = ['俄罗斯' , '非洲', '印度', '国内'];
         var opts = myChart.getOption();
         var ecConfig = echarts.config;
         myChart.on(ecConfig.EVENT.LEGEND_SELECTED, function (params) {
@@ -127,5 +126,5 @@
     });
 
 </script>
-</body>
+
 </html>
