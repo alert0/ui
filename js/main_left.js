@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/4/7 0007.
  */
-function switchMapArea() {
+function switchMapArea(chart) {
     var $left = $("#l");
     var iframe = '<iframe id="iframe" scrolling="no" frameborder="0" src="flatMap.html" ></iframe>';
 
@@ -12,26 +12,27 @@ function switchMapArea() {
             src = src.replace("off", "on");
             $(this).attr("src", src)
                 .siblings().attr("src", $(this).siblings().attr("src").replace("on", "off"))
-            var $chart = $("#chart");
+            // var $chart = $("#chart");
             if ($left.find(".switch.sphere").is(":hidden")) {
                 $left.find(".switch.sphere").css("display","flex").siblings().hide()
             } else {
                 $left.find(".flat .mapArea iframe").remove();
                 $left.find(".switch.flat").css("display","flex").find(".mapArea").append(iframe).parent()
-                    .siblings().hide()
-                mapChart.resize();
+                    .siblings().hide();
+                chart.resize();
             }
         }
     });
 }
 $(function () {
-
     //进入时的首页效果
     $("#mask").click(function () {
         $(this).animate({"opacity":0},1000,function () {
             $(this).hide();
         })
     });
+    //切换地图显示区域
+    switchMapArea(myCharts[0]);
 
 
     // require(['echarts-all'],function () {

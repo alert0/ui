@@ -82,6 +82,11 @@ function getBarEcharts() {
         },
         xAxis: {
             type: 'value',
+            axisLabel:{
+                textStyle:{
+                    color: '#fff'
+                }
+            },
             splitLine: {
                 lineStyle: {
                     color: '#d5d5d5'
