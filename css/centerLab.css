@@ -236,6 +236,13 @@
 .radio_box{
     margin-left: 2%;
 }
+#selectall{
+    background-color: #00B2F8;
+    border: 1px solid #4397f7;
+    padding: 1em;
+    margin: 0;
+    color: white;
+}
 
 /*monitor end*/
 
