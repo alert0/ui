@@ -26,7 +26,7 @@ define("start", function (require) {
 /*    var test = function (data) {
      return data+3;
      };*/
-    var myChart = ec.init(document.getElementById('chart'));
+    var myChart = ec.init(document.getElementById('sphereMap'));
 
     // console.log(mapSphere.toString());
     //这里需要去除因获取文本而定义成函数的额外字符串

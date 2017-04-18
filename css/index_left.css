@@ -18,7 +18,7 @@
     display: none;
 }
 #l .switch.flat>div{
-    /*outline: 1px solid #ee8004;*/
+    outline: 1px solid #ee8004;
 }
 #l .flat .mapArea{
     flex:4;
@@ -33,7 +33,7 @@
 #l .flat .flat-right>div{
     flex:1;
     padding:5%;
-    /*outline: 1px solid rgba(238, 196, 2, 0.38);*/
+    outline: 1px solid rgba(238, 196, 2, 0.38);
     outline-offset: -1px;
 }
 
@@ -56,7 +56,9 @@
 #l .sphere .mapArea{
     flex:3;
 }
-
+#l .sphere .mapArea iframe{
+    height: 100%;
+}
 
 #l .sphere .sphere-left>div,
 #l .sphere .sphere-right>div{
@@ -69,21 +71,7 @@
     flex:1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #l header{
-
     text-align: center;
 }
 #l h1{
@@ -131,6 +119,7 @@
     height:100%;
 }
 
+
 /*平面地图样式*/
 #l .flat iframe{
     width:100%;
@@ -142,7 +131,6 @@
     height:100%;
     border-style: solid;
     border-image: url("../img/chartBorder.png") 120 52 30 / 13% 6% 6%;
-
 }
 #l .flat .flat-right>div>div h3{
     position: absolute;
@@ -152,9 +140,9 @@
     font-weight: normal;
     color: #fff;
 }
-#l .flat .flat-right>div>div .myChart{
-    width: 200px;
-    height: 200px;
+#l .flat .flat-right>div>div #myChart{
+    width: 100%;
+    height: 100%;
 }
 
 #l .btnGroup{

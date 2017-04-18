@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title>U-lab数据中心</title>
-    <!--<link rel="stylesheet" href="../asserts/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index_left.css">
 </head>
@@ -23,24 +22,22 @@
             <img class="sphere" src="../img/btn_flat_off.png">
         </div>
         <div class="switchGroup">
-            <div class="switch sphere hidden">
-                <div class="sphere-right">
+            <div class="switch sphere">
+                <div class="sphere-left">
                     <div class="sphere-left-top"></div>
                     <div class="sphere-left-bottom"></div>
                 </div>
-                <div id="chart" class="mapArea">
-                    <iframe src="" frameborder="0">
-                        <!--球体地图位置-->
-                    </iframe>
+                <div class="mapArea">
+                    <!--球体地图位置-->
+                    <iframe src="sphereMap.html"></iframe>
                 </div>
                 <div class="sphere-right">
                     <div class="sphere-right-top"></div>
                     <div class="sphere-right-bottom"></div>
                 </div>
             </div>
-            <div class="switch flat">
-<!--电子表字体数据，暂时不用了
-                <div class="numberInfo cf">
+            <div class="switch flat hidden">
+                <div class="numberInfo cf hidden">
                     <div class="item">
                         <h3>实验室总数</h3>
                         <div class="nb">7583</div>
@@ -54,24 +51,23 @@
                         <div class="nb">98%</div>
                     </div>
                 </div>
--->
                 <div class="mapArea">
                     <!--平面地图位置-->
                 </div>
                 <div class="flat-right">
                     <div class="flat-right-top">
-                        <div class="professional">
+                        <div class="chartBorder">
                             <h3>专业能力</h3>
                             <div id="myChart"></div>
                         </div>
                     </div>
                     <div class="flat-right-bottom">
-                        <div class="testPurpose">
+                        <div class="chartBorder">
                             <h3>试验目的</h3>
+                            <div class="myChart"></div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -90,39 +86,11 @@
 -->
 
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<script src="../asserts/echarts/echarts.js"></script>
-<script src="../asserts/echarts/echarts-x.js"></script>
-<script src="../asserts/js/jquery.dragsort-0.5.2.js"></script>
-<script src="../asserts/js/require.js"></script>
+<script src="../asserts/echarts/echarts-all.js"></script>
+<!--<script src="../asserts/js/jquery.dragsort-0.5.2.js"></script>-->
+
 <script>
-    // 路径配置
-    require.config({
-        paths: {
-            'echarts-3.5.2':'../asserts/echarts/echarts-3.5.2',
-            'echarts-all':'../asserts/echarts/echarts-all',
-            'echarts': '../dep/echarts/build',
-            'echarts-x': '../dep/echarts-x/build'
-        }
-    });
-    // 然后就可以动态加载图表进行绘制啦
-    require([
-        'echarts',
-        'echarts-x',
-        // ECharts-X 中 map3d 的地图绘制基于 ECharts 中的 map。
-        'echarts/chart/map',
-        'echarts-x/chart/map3d'
-    ])
-</script>
-<script src="../js/sphere.js"></script>
-<script src="../js/boot.js"></script>
-<script src="../js/flat.js"></script>
-<script src="../js/manyEcharts.js"></script>
-<script src="../js/main_left.js"></script>
-<script>
-    if (document.location.href.indexOf('local') == -1) {
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb78830c9a5dad062d08b90b2bc0cf5da' type='text/javascript'%3E%3C/script%3E"));
-    }
+/*
     $(function () {//拖动动作
         $("#content").dragsort({
             dragSelector: "#left,#right",
@@ -130,7 +98,32 @@
             dragEnd: function () {},
             placeHolderTemplate: "<div class='placeHolder'><div></div></div>"
         });
-    })
+    });
+*/
+
+    var myChart = echarts.init($("#myChart")[0]);
+var option = {
+    title: {
+        text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+        data:['销量']
+    },
+    xAxis: {
+        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    },
+    yAxis: {},
+    series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    }]
+};
+console.log("option:",option)
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
 </script>
+<script src="../js/main_left.js"></script>
 </body>
 </html>

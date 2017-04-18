@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../asserts/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/centerLab.css">
+</head>
+<body>
+<div class="box">
+    <div class="header_box">
+        <div class="top_dropdown">
+            <ul class="tabs">
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="title_box">111111111111111111111</div>
+    <div class="monitor_box">
+        <div class="monitor_left fl">
+            <ul>
+                <li>111111</li>
+                <li>111111</li>
+                <li>111111</li>
+                <li>111111</li>
+                <li>111111</li>
+                <li>111111</li>
+            </ul>
+        </div>
+        <div class="monitor_right fl">
+            <div id="line_box"></div>
+            <div class="radio_box">
+                <input id="selectall" type="button" value="全不选" flag="1"/>
+                <!--<input  type="radio" name="radiobutton" value="radiobutton"> 全选-->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../../asserts/js/jquery-2.2.4.js"></script>
+<script src="../../asserts/js/bootstrap.min.js"></script>
+<script src="../../asserts/echarts/echarts-3.5.2.min.js"></script>
+<script src="../../js/manyEcharts.js"></script>
+<script>
+    var line_box=echarts.init(document.getElementById("line_box"));
+    line_box.setOption(getLineEcharts());
+
+    var option ={
+        tooltip: {
+            trigger: 'axis'
+        },
+        grid:{  //绘图区位置
+            left:"20%"
+        },
+        legend: {  //图例位置
+            left:0,
+            orient:'vertical',
+            inactiveColor:"gray",  //图例关闭时的颜色
+            textStyle:{
+                color:"#66ccff"
+            },
+            data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+//            toolbox: {
+//                show : false,
+//                feature : {
+//                    mark : {show: true},
+//                    dataView : {show: true, readOnly: false},
+//                    magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+//                    restore : {show: true},
+//                    saveAsImage : {show: true}
+//                }
+//            },
+        calculable: true,
+        xAxis: [
+
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+            }
+        ],
+        series: [
+            {
+                name: '邮件营销',
+                type: 'line',
+                stack: '总量',
+                data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name: '联盟广告',
+                type: 'line',
+                stack: '总量',
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '视频广告',
+                type: 'line',
+                stack: '总量',
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '直接访问',
+                type: 'line',
+                stack: '总量',
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '搜索引擎',
+                type: 'line',
+                stack: '总量',
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+
+    };
+    line_box.setOption(option);
+
+    //全选开关
+    var selectArr = line_box.getOption().legend[0].data;
+
+    $('#selectall').click(function(){
+        var flag = $(this).attr('flag');
+        if(flag == 1){
+            var val = false;
+            $(this).attr('flag',0);
+            $(this).val('全选中');
+        }else{
+            var val = true;
+            $(this).attr('flag',1);
+            $(this).val('全不选');
+        }
+        var obj = {};
+        for(var key in selectArr){
+            obj[selectArr[key]] = val;
+        }
+        option.legend.selected = obj;
+        line_box.setOption(option);
+    });
+
+
+
+</script>
+</html>
