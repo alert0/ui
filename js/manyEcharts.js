@@ -159,7 +159,7 @@ function getBarEcharts() {
                 barWidth: 6,
                 itemStyle: {
                     normal: {
-                        color: '#4ea3d9'
+                        color: "#4ea3d9"
                     }
                 },
                 label: {
@@ -280,7 +280,7 @@ function getAreaEcharts() {
                 }
             },
             axisTick: {  //刻度值
-                show: false,
+                show: false
             }
 
         },
