@@ -125,6 +125,28 @@ function navSelectA() {//这里会触发地图中要加载的数据
         return false;
     })
 }
+//地图左上角区域的数字样式
+function flatLTnumberShow(n) {
+    for(var j=0;j<n.length;j++){
+
+        var $flatLTnumber = $(".flat-left-top .chartBorder ul li").eq(j).find(".number");
+        var str = n[j]+"";
+        var newStr = "";
+        for(var i = 0; i<4; i++){
+            if(i<4-str.length){
+                newStr+="0";
+            }else{
+                newStr+='<span style="color: #fff;">'+str+'</span>';
+                console.log(newStr);
+                $flatLTnumber.html(newStr);
+                break ;
+            }
+
+        }
+    }
+
+}
+
 
 $(function () {
 
@@ -138,4 +160,5 @@ $(function () {
     navSelectAll();
     //点击a元素时
     navSelectA();
+    flatLTnumberShow([104,93,82,26,38,27,18])
 });
