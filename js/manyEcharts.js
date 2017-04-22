@@ -265,8 +265,8 @@ function getAreaEcharts() {
         },
         xAxis: [
             {
-                name:'月份',
-                nameTextStyle:{
+                name: '月份',
+                nameTextStyle: {
                     color: '#66ccff'
                 },
                 type: 'category',
@@ -297,7 +297,7 @@ function getAreaEcharts() {
         yAxis: [
             {
                 name: "数量",
-                nameTextStyle:{
+                nameTextStyle: {
                     color: '#66ccff'
                 },
                 type: 'value',
@@ -309,17 +309,19 @@ function getAreaEcharts() {
                     textStyle: {
                         color: '#66ccff'
                     },
-
-                    splitLine: {  //刻度线
-                        show: true,
-                        lineStyle: {
-                            color: '#123a67'
-                        }
-                    },
-                    axisTick: {  //刻度值
-                        show: false
+                },
+                splitLine: {  //刻度线
+                    show: true,
+                    lineStyle: {
+                        color: "#234f65"
                     }
-                }
+                },
+                axisTick: {  //刻度值
+                    show: false
+                },
+                // max: 400,
+                // offset: 5
+
             }
 
         ],
