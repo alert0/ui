@@ -610,33 +610,37 @@ var option = {
         },
     },
     legend: {
-        // orient: 'vertical',
-        x: '50%',
+        show:false,
+        // x: '50%',
         y: "bottom",
-        data: ['美国', '澳洲', '日本', '欧洲', '','俄罗斯' , '非洲', '拉丁美洲', '国内'],
+        data: ['研发类实验室', '中心实验室', '模块商实验室', '工厂实验室', '',
+            '冰冷' , '洗涤', '家空', '商空', '热水器', '厨电', '电视'],
         selectedMode: 'multiple',
         selected: {
-            '美国': false,
-            '澳洲': false,
-            '日本': false,
-            '欧洲': true,
+            '研发类实验室': true,
+            '中心实验室': false,
+            '模块商实验室': false,
+            '工厂实验室': false,
 
-            '俄罗斯': true,
-            '非洲': false,
-            '印度': false,
-            '国内': false
+            '冰冷': true,
+            '洗涤': false,
+            '家空': false,
+            '商空': false,
+            '热水器': false,
+            '厨电': false,
+            '电视': false
         },
         textStyle: {
             color: '#fff'
         }
     },
-
+    // '冰冷' , '洗涤', '家空', '商空', '热水器', '厨电', '电视'
     series: [
         {
         tooltip:{
           show:false
         },
-        name: 'zy_hotpoint',
+        name: 'worldMap',
         type: 'map',
         roam: false,
         hoverable: false,
@@ -924,15 +928,11 @@ var option = {
          */
     },
         {
-            name: '美国',
+            name: '研发类实验室',
             type: 'map',
-            roam: false,
             hoverable: false,
             mapType: 'world',
-            mapLocation: {
-                x: "0",
-                // y: "top"
-            },
+/*
             itemStyle: {
                 normal: {
                     borderColor: 'rgba(100,149,237,1)',
@@ -942,6 +942,7 @@ var option = {
                     }
                 }
             },
+*/
             data: [],
             markPoint: {
                 symbol: 'emptyCircle',
@@ -1110,7 +1111,7 @@ var option = {
              *///geocoord
         },
         {
-            name: '澳洲',
+            name: '中心实验室',
             type: 'map',
             roam: false,
             hoverable: false,
@@ -1175,7 +1176,7 @@ var option = {
             },
         },
         {
-            name: '日本',
+            name: '模块商实验室',
             type: 'map',
             roam: false,
             hoverable: false,
@@ -1240,7 +1241,7 @@ var option = {
             },
         },
         {
-            name: '欧洲',
+            name: '工厂实验室',
             type: 'map',
             roam: false,
             hoverable: false,
@@ -1305,7 +1306,7 @@ var option = {
             },
         },
         {
-            name: '俄罗斯',
+            name: '冰冷',
             type: 'map',
             roam: false,
             hoverable: false,
@@ -1370,26 +1371,16 @@ var option = {
             },
         },
         {
-            name: '国内',
+            name: '洗涤',
             type: 'map',
             roam: false,
             hoverable: false,
             mapType: 'world',
             mapLocation:{
-                x:'right',
+                // height:"80%",
+                // x:'right'
             },
 
-/*
-            itemStyle: {
-                normal: {
-                    borderColor: 'rgba(100,149,237,1)',
-                    borderWidth: 0.5,
-                    areaStyle: {
-                        color: '#1b1b1b'
-                    }
-                }
-            },
-*/
             data: [],
             markPoint: {
                 symbol: 'emptyCircle',
@@ -1410,7 +1401,7 @@ var option = {
                     normal: {label: {show: false}},
                     emphasis: {label: {show: false}}
                 },
-                data: dataBase
+                data: []
             },
             markLine: {
                 smooth: true,

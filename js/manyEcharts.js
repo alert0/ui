@@ -154,6 +154,7 @@ function getBarEcharts() {
         ],
         xAxis: [
             {
+
                 name: "",
                 type: 'category',
                 data: [],
@@ -307,19 +308,19 @@ function getAreaEcharts() {
                     show: true,
                     textStyle: {
                         color: '#66ccff'
-                    }
-                },
-                splitLine: {  //刻度线
-                    show: true,
-                    lineStyle: {
-                        color: '#234f65'
-                    }
-                },
-                axisTick: {  //刻度值
-                    show: false,
-                },
+                    },
 
-            },
+                    splitLine: {  //刻度线
+                        show: true,
+                        lineStyle: {
+                            color: '#123a67'
+                        }
+                    },
+                    axisTick: {  //刻度值
+                        show: false
+                    }
+                }
+            }
 
         ],
         series: []

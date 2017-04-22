@@ -39,12 +39,14 @@
 <div id="mapFlat"></div>
 <!--放置地图上的显示信息-->
 <div id="echartTips"></div>
+<!--
 <div class="btnGroup">
     <div class="selectAll">
         <label><input type="checkbox">全选</label>
     </div>
     <button class="btn switchLegend">图例开关</button>
 </div>
+-->
 
 </body>
 <script src="../asserts/js/jquery-2.2.4.js"></script>
@@ -94,7 +96,7 @@
         });
 
         //上下每行只选择一个
-        var legendData1 = ['美国', '澳洲', '日本', '欧洲'];
+        var legendData1 = ['研发类实验室', '中心实验室', '模块商实验室', '工厂实验室'];
         var legendData2 = ['俄罗斯' , '非洲', '印度', '国内'];
         var opts = myChart.getOption();
         var ecConfig = echarts.config;
