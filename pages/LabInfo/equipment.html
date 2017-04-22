@@ -16,14 +16,14 @@
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Dropdown
+                            实验室类别
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">中心实验室</a></li>
+                            <li><a href="#">研发实验室</a></li>
+                            <li><a href="#">工厂实验室</a></li>
+                            <li><a href="#">模块商实验室</a></li>
                         </ul>
                     </div>
                 </li>
@@ -31,14 +31,14 @@
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Dropdown
+                            研发中心
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">中国区实验室</a></li>
+                            <li><a href="#">美国区实验室</a></li>
+                            <li><a href="#">欧洲区实验室</a></li>
+                            <li><a href="#">非洲区实验室</a></li>
                         </ul>
                     </div>
                 </li>
@@ -46,14 +46,17 @@
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Dropdown
+                            产线
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">冰箱</a></li>
+                            <li><a href="#">洗涤</a></li>
+                            <li><a href="#">家空</a></li>
+                            <li><a href="#">商空</a></li>
+                            <li><a href="#">热水器</a></li>
+                            <li><a href="#">厨电</a></li>
+                            <li><a href="#">电视</a></li>
                         </ul>
                     </div>
 
@@ -61,42 +64,36 @@
             </ul>
         </div>
     </div>
-    <div id="title_box">111111111111111111111</div>
+    <div id="title_box">按需标配、智能化检测、远程操控、全程可视</div>
     <div class="contents_box">
         <ul>
             <li>
                 <table>
                     <tr colspan="2">111</tr>
                     <tr>
-                        <td>11:</td>
-                        <td>11</td>
+                        <td>在测订单：</td>
+                        <td class="text_status">4</td>
                     </tr>
                     <tr>
-                        <td>22:</td>
-                        <td>22</td>
+                        <td>已测订单：</td>
+                        <td>317</td>
                     </tr>
                     <tr>
-                        <td>11</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>22</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
+                        <td>工位负荷：</td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;height: 100%">
-                                    60%
-                                </div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;height: 100%"></div>
                             </div>
+                            <span>60%</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>22</td>
-                        <td>22</td>
+                        <td style="vertical-align: top">月负荷：</td>
+                        <td>
+                            <div id="pieEcharts"></div>
+                        </td>
                     </tr>
+
                 </table>
             </li>
             <li>22</li>
@@ -120,9 +117,49 @@
 </body>
 <script src="../../asserts/js/jquery-2.2.4.js"></script>
 <script src="../../asserts/js/bootstrap.min.js"></script>
+<script src="../../asserts/echarts/echarts-3.5.2.min.js"></script>
+<script src="../../js/manyEcharts.js"></script>
 <script>
     $(function () {
-        $('.dropdown-toggle').dropdown()
+        $('.dropdown-toggle').dropdown();
+        var pieEcharts=echarts.init(document.getElementById("pieEcharts"));
+        pieEcharts.setOption(getPieEcharts());
+        var option={
+            textStyle:{
+                fontSize:8
+            },
+            grid:{
+                right:"10%"
+            },
+            legend: {
+                show:true,
+                right: 'right',
+                data: ['负荷率','空闲率'],
+
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:335, name:'负荷率'},
+                        {value:310, name:'空闲率'}
+                    ],
+                    itemStyle:{
+                        normal:{
+                            label:{
+                                show: false,
+                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            },
+                            labelLine :{show:false}
+                        }
+                    }
+                }
+            ]
+        };
+        pieEcharts.setOption(option)
     })
 </script>
 </html>
