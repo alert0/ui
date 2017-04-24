@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/echarts-x打包测试.iml" filepath="$PROJECT_DIR$/.idea/echarts-x打包测试.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ui.iml" filepath="$PROJECT_DIR$/.idea/ui.iml" />
     </modules>
   </component>
 </project>

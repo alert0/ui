@@ -61,12 +61,12 @@
             </ul>
         </div>
     </div>
-    <div id="title_box">111111111111111111111</div>
+    <div id="title_box">订单全程可视，事中过程可视，事后用户评价</div>
     <div class="order_box">
         <div class="order_left fl">
             <ul>
-                <li>11</li>
-                <li>11</li>
+                <li>试验总数1123</li>
+                <li>订单个数234个</li>
                 <li>
                     <div id="pie1"></div>
                 </li>
@@ -85,27 +85,80 @@
                         <div id="pie4"></div>
                         <div class="lab_name">11111</div>
                     </li>
-                    <li>111</li>
-                    <li>111</li>
-                    <li>111</li>
-                    <li>111</li>
-                    <li>111</li>
+                    <li>
+                        <div id="pie5"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie6"></div>
+                        <div class="lab_name">11111</div>
+            </li>
+                    <li>
+                        <div id="pie7"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie8"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie9"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+
                 </ul>
                 <ul>
-                    <li>222</li>
-                    <li>222</li>
-                    <li>222</li>
-                    <li>222</li>
-                    <li>222</li>
-                    <li>222</li>
+                    <li>
+                        <div id="pie10"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie11"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie12"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie13"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie14"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie15"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+
                 </ul>
                 <ul>
-                    <li>333</li>
-                    <li>333</li>
-                    <li>333</li>
-                    <li>333</li>
-                    <li>333</li>
-                    <li>333</li>
+                    <li>
+                        <div id="pie16"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie17"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie18"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie19"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie20"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
+                    <li>
+                        <div id="pie21"></div>
+                        <div class="lab_name">11111</div>
+                    </li>
                 </ul>
 
             </div>
@@ -125,7 +178,24 @@
         var pie2 = echarts.init(document.getElementById("pie2"));
         var pie3 = echarts.init(document.getElementById("pie3"));
         var pie4=echarts.init(document.getElementById("pie4"));
-        var radius = [40, 50]; //圆环大小
+        var pie5=echarts.init(document.getElementById("pie5"));
+        var pie6 = echarts.init(document.getElementById("pie6"));
+        var pie7 = echarts.init(document.getElementById("pie7"));
+        var pie8 = echarts.init(document.getElementById("pie8"));
+        var pie9=echarts.init(document.getElementById("pie9"));
+        var pie10=echarts.init(document.getElementById("pie10"));
+        var pie11 = echarts.init(document.getElementById("pie11"));
+        var pie12 = echarts.init(document.getElementById("pie12"));
+        var pie13 = echarts.init(document.getElementById("pie13"));
+        var pie14=echarts.init(document.getElementById("pie14"));
+        var pie15=echarts.init(document.getElementById("pie15"));
+        var pie16 = echarts.init(document.getElementById("pie16"));
+        var pie17 = echarts.init(document.getElementById("pie17"));
+        var pie18 = echarts.init(document.getElementById("pie18"));
+        var pie19=echarts.init(document.getElementById("pie19"));
+        var pie20=echarts.init(document.getElementById("pie20"));
+        var pie21=echarts.init(document.getElementById("pie21"));
+        var radius = [35, 45]; //圆环大小
         var labelTop = {
             normal: {
                 label: {
@@ -173,8 +243,33 @@
         pie2.setOption(getHuanXing());
         pie3.setOption(getHuanXing());
         pie4.setOption(getHuanXing());
+        pie5.setOption(getHuanXing());
+        pie6.setOption(getHuanXing());
+        pie7.setOption(getHuanXing());
+        pie8.setOption(getHuanXing());
+        pie9.setOption(getHuanXing());
+        pie10.setOption(getHuanXing());
+        pie11.setOption(getHuanXing());
+        pie12.setOption(getHuanXing());
+        pie13.setOption(getHuanXing());
+        pie14.setOption(getHuanXing());
+        pie15.setOption(getHuanXing());
+        pie16.setOption(getHuanXing());
+        pie17.setOption(getHuanXing());
+        pie18.setOption(getHuanXing());
+        pie19.setOption(getHuanXing());
+        pie20.setOption(getHuanXing());
+        pie21.setOption(getHuanXing());
 
         pie1.setOption({
+            title: {
+//                bottom: '2%',
+                text: '已测订单',
+                textStyle: {
+                    fontSize: '100%',
+                    color:'#66ccff'
+                }
+            },
             legend: {
                 show: false,
                 data: [
@@ -184,7 +279,7 @@
             series: [
                 {
                     type: 'pie',
-                    center: ['50%', '50%'],
+                    center: ['50%', '55%'],
                     radius: radius,
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
@@ -197,6 +292,14 @@
 
         });
         pie2.setOption({
+            title: {
+//                bottom: '2%',
+                text: '在测订单',
+                textStyle: {
+                    fontSize: '100%',
+                    color:'#66ccff'
+                }
+            },
             legend: {
                 show: false,
                 data: [
@@ -206,7 +309,7 @@
             series: [
                 {
                     type: 'pie',
-                    center: ['50%', '50%'],
+                    center: ['50%', '55%'],
                     radius: radius,
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
@@ -219,6 +322,14 @@
 
         });
         pie3.setOption({
+            title: {
+//                bottom: '2%',
+                text: '等待订单',
+                textStyle: {
+                    fontSize: '100%',
+                    color:'#66ccff'
+                }
+            },
             legend: {
                 show: false,
                 data: [
@@ -228,7 +339,7 @@
             series: [
                 {
                     type: 'pie',
-                    center: ['50%', '50%'],
+                    center: ['50%', '55%'],
                     radius: radius,
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
@@ -250,8 +361,8 @@
             series: [
                 {
                     type: 'pie',
-                    center: ['20%', '50%'],
-                    radius: [10,20],
+                    center: ['20%', '60%'],
+                    radius: [15,20],
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
                     data: [
@@ -261,8 +372,8 @@
                 },
                 {
                     type: 'pie',
-                    center: ['50%', '50%'],
-                    radius: [10,20],
+                    center: ['50%', '60%'],
+                    radius: [15,20],
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
                     data: [
@@ -272,8 +383,8 @@
                 },
                 {
                     type: 'pie',
-                    center: ['80%', '50%'],
-                    radius: [10,20],
+                    center: ['80%', '60%'],
+                    radius: [15,20],
                     x: '0%', // for funnel
                     itemStyle: labelFromatter,
                     data: [
@@ -284,6 +395,756 @@
             ]
 
         });
+        pie5.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie6.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie7.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie8.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie9.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie10.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie11.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie12.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie13.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie14.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie15.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie16.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie17.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie18.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie19.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie20.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+        pie21.setOption({
+            legend: {
+                show: false,
+                data: [
+                    'GoogleMaps',"zaice","dengdai"
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    center: ['20%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'GoogleMaps', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['50%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'zaice', value: 54, itemStyle: labelTop}
+                    ]
+                },
+                {
+                    type: 'pie',
+                    center: ['80%', '60%'],
+                    radius: [15,20],
+                    x: '0%', // for funnel
+                    itemStyle: labelFromatter,
+                    data: [
+                        {name: 'other', value: 46, itemStyle: labelBottom},
+                        {name: 'dengdai', value: 54, itemStyle: labelTop}
+                    ]
+                }
+            ]
+
+        });
+
+
 
     })
 </script>

@@ -21,6 +21,7 @@
     cursor: pointer;
 }
 
+/*总状态*/
 .total_state {
     width: 100%;
     height: 89%;
@@ -45,8 +46,8 @@
 }
 
 .total_state .total_bottom {
-    /*flex: 1;*/
-    height: 34%;
+    flex: 1;
+    /*height: 34%;*/
     background: url("../img/TotalState/border-1-2.png") no-repeat;
     background-size: 100% 97%;
 }
@@ -364,10 +365,120 @@
     color: #00e673;
 }
 
+
+
+/*设施状态*/
+.sheshi_state{
+    width: 100%;
+    height: 90%;
+    /*background-color: #00B2F8;*/
+    display: none;
+    flex-direction:column;
+}
+.sheshi_top{
+    margin-top: 1%;
+    flex: 1;
+    display: flex;
+    flex-direction:row ;
+}
+.sheshi_bottom{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.sheshi_top_left{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%
+}
+.sheshi_top_rihght{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+.sheshi_bottom_left{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+.sheshi_bottom_right{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+
+
+/*数据结果*/
+.shuju_result{
+    width: 100%;
+    height: 90%;
+    /*background-color: #00B2F8;*/
+    display: none;
+    flex-direction:column;
+}
+.shuju_result_top{
+    margin-top: 1%;
+    flex: 1;
+    display: flex;
+    flex-direction:row ;
+}
+.shuju_result_bottom{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.shuju_result_top_left{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%
+}
+.shuju_result_top_center{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%
+}
+.shuju_result_top_rihght{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+.shuju_result_bottom_left{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+.shuju_result_bottom_right{
+    flex: 1;
+    background: url("../img/sheshiState/border .png") no-repeat;
+    background-size: 98% 98%;
+}
+
+
+/*数据挖掘*/
+.shuju_apply{
+    width: 100%;
+    height: 90%;
+    /*background-color: #00B2F8;*/
+    display: none;
+    flex-direction:column;
+}
+.shuju_apply_top{
+    margin-top: 1%;
+    flex: 1;
+    background: url("../img/TotalState/border-2-2.png") no-repeat;
+    background-size: 98% 98%
+}
+
+.shuju_apply_bottom{
+    flex: 1;
+    /*background: url("../img/TotalState/border-2-2.png") no-repeat;*/
+    /*background-size: 98% 98%*/
+}
+
 .box {
     display: none;
 }
 
 .selected {
-    display: block;
+    display: flex;
 }
