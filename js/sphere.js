@@ -7,7 +7,7 @@ function mapSphere() {
         success: function (data) {
             var markPointStyle = {
                 normal: {
-                    color: 'red'
+                    color: '#fbf679'
                 }
             };
             // Airport: [name（机场名？）, city, country, longitude（经度）, latitude（纬度）]
@@ -43,7 +43,9 @@ function mapSphere() {
                     data: data.airlines.map(function (item, index, array) {
                         return item[0];
                     }),
-                    selected: {},
+                    selected: {
+                        others:true
+                    },
                     x: 'center',
                     y: "bottom",
                     // orient: 'vertical',
@@ -60,32 +62,47 @@ function mapSphere() {
                     flat: false, /*是否使用平面图*/
                     flatAngle: 0,
                     mapLocation: {
-                        x: "0%"
-                        // y: "top"
+                        x: 0,
+                        y: 0,
+                        width: '100%',
+                        height: '100%'
                     },
                     baseLayer: {
-                        backgroundColor: '',
-                        backgroundImage: '../img/earth.jpg'
+                        backgroundColor: 'rgba(20,143,204,.5)',
                     },
                     itemStyle: {
                         normal: {
+                            width: 2,
                             borderWidth: 1,
-                            borderColor: 'yellow',
+                            borderColor: '#00ffff',
                             areaStyle: {
                                 color: 'rgba(0, 0, 0, 0)'
                             }
                         }
                     },
                     markPoint: {
-                        symbol: "heart",
+                        symbol:"triangle",
+                        // symbol: "circle",
                         effect: {
-                            shadowBlur: 0.2
+                            shadowBlur: 0.1
+                        },
+                        itemStyle:{
+                            normal:{
+                                color:"#fff"
+                            }
                         },
                         large: true,
-                        symbolSize: 15,
+                        symbolSize: 3,
                         data: airports
                     },
-                    roam:false
+                    roam:{
+                        zoom: 1.3,
+                        minZoom: 1.3,
+                        maxZoom: 1.3,
+                        // focus:"Pakistan"
+                    }
+                    ,
+
 /*
                     roam: {
                         autoRotate: false,//是否自动旋转
@@ -98,11 +115,11 @@ function mapSphere() {
 
             //默认选中华北
             opts.legend.data.forEach(function (name) {
-                if (name.indexOf('华北') >= 0) {
+                // if (name.indexOf('华北') >= 0) {
                     opts.legend.selected[name] = true;
-                } else {
-                    opts.legend.selected[name] = false;
-                }
+                // } else {
+                //     opts.legend.selected[name] = false;
+                // }
             });
             /*
              "青岛":[120.33,36.07],
@@ -117,9 +134,31 @@ function mapSphere() {
                         name: airlineName,
                         markLine: {
                             effect: {
-                                show: true
+                                show: true,
+                                scaleSize: 2,
+                                period: 5,
+                                color: '#7bb4ff',
+                                shadowBlur: 10
                             },
-                            distance: 2,
+                            itemStyle : {
+                                normal: {
+                                    // 线的颜色默认是取 legend 的颜色
+                                    // color: null
+                                    // 线宽，这里线宽是屏幕的像素大小
+                                    width: 5,
+                                    // 线的透明度
+                                    opacity: 1,
+                                    // color:"rgba(50,143,204,1)",
+                                    color:"#7bb4ff",
+                                    borderWidth:5,
+                                    borderColor:"#7bb4ff",
+                                    lineStyle: {
+                                        type: 'solid',
+                                        shadowBlur: 5
+                                    }
+                                }
+                            },
+                            distance: 0,
                             data: routes.map(function (item) {
                                 //geoCoord：通过绝对经纬度指定地区的名称文本位置
                                 //route中的起点终点数值是机场的下标！
