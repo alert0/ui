@@ -7,36 +7,104 @@
     <link rel="stylesheet" href="../css/index_left.css">
 </head>
 <body>
-<!--
-<div id="mask">
-    <video src="../img/movie.ogg"  width="100%" height="100%" preload="auto" >点此进入</video>
-</div>
--->
 <div id="content">
     <div id="l">
         <header>
             <h1>U-lab全球互联数据中心</h1>
         </header>
         <div class="btnGroup">
-            <img class="sphere" src="../img/btn_sphere_on.png">
-            <img class="sphere" src="../img/btn_flat_off.png">
+            <img class="sphere" src="../img/ico/btn_sphere_on.png">
+            <img class="sphere" src="../img/ico/btn_flat_off.png">
         </div>
         <div class="switchGroup">
             <div class="switch sphere">
                 <div class="sphere-left">
-                    <div class="sphere-left-top"></div>
-                    <div class="sphere-left-bottom"></div>
+                    <div class="sphere-left-top">
+                        <div class="chartBorder">
+                            <h3>海尔实验室主要分布在 <strong>6</strong>大洲</h3>
+                            <div class="myChart"></div>
+                        </div>
+                    </div>
+                    <div class="sphere-left-bottom">
+                        <div class="chartBorder">
+                            <h3>海尔现已有<strong>50+</strong>的产品分类</h3>
+                            <div class="myChart">
+                                <iframe src="wordCloud.html"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="mapArea">
                     <!--球体地图位置-->
                     <iframe src="sphereMap.html"></iframe>
                 </div>
                 <div class="sphere-right">
-                    <div class="sphere-right-top"></div>
-                    <div class="sphere-right-bottom"></div>
+                    <div class="sphere-right-top">
+                        <div class="chartBorder">
+                            <h3>海尔实验室总数为 <strong>1577</strong></h3>
+                            <div class="myChart"></div>
+                        </div>
+                    </div>
+                    <div class="sphere-right-bottom">
+                        <div class="chartBorder">
+                            <h3>实验室信息</h3>
+                            <ul class="header">
+                                <li>实验室名称</li>
+                                <li>所在地</li>
+                                <li>类型</li>
+                            </ul>
+                            <div class="scroll">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>中海博睿</li>
+                                            <li>青岛</li>
+                                            <li>研发类实验室</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="scrollAux"></ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="switch flat hidden">
+            <div class="switch flat">
                 <div class="flat-main">
                     <div class="flat-left">
                         <div class="flat-left-top">
@@ -66,6 +134,7 @@
                     <div class="mapArea">
                         <!--平面地图位置-->
                     </div>
+                    <div id="maskSphere"></div>
                     <div class="flat-right">
                         <div class="flat-right-top">
                             <div class="chartBorder">
@@ -85,48 +154,47 @@
                 </div>
                 <!--平面地图下面的导航-->
                 <div class="flat-footer controlBar">
-                        <div class="legend">
-                            <div class="legend-l navSwitch">产线</div>
-                            <div class="legend-r navSwitch">实验室</div>
-                            <div class="selectAll">
-                                <label for="navSelectAll"><span class="icon"></span> 全选</label>
-                                <input id="navSelectAll" checked type="checkbox" class="hidden">
-                            </div>
-                            <div class="labLine">
-                                <ul class="lab hidden">
-                                    <li class="active"><a href=""><span class="icon"></span> 研发类实验室</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 中心实验室</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 模块商实验室</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 工厂实验室</a> </li>
-                                </ul>
-                                <ul class="line">
-                                    <li class="active"><a href=""><span class="icon"></span> 冰冷</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 洗涤</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 家空</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 商空</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 热水器</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 厨电</a> </li>
-                                    <li class="active"><a href=""><span class="icon"></span> 电视</a> </li>
-                                </ul>
-                            </div>
-
-                            <ul class="legend-bottom">
-                                <li class="active"><a href=""><span class="icon"></span> 中心实验室</a> </li>
-                                <li><a href=""><span class="icon"></span> 冰冷</a> </li>
-                                <li><a href=""><span class="icon"></span> 洗涤</a> </li>
-                                <li><a href=""><span class="icon"></span> 家空</a> </li>
-                                <li><a href=""><span class="icon"></span> 商空</a> </li>
-                                <li><a href=""><span class="icon"></span> 热水器</a> </li>
-                                <li><a href=""><span class="icon"></span> 厨电</a> </li>
+                    <div class="legend">
+                        <div class="legend-l navSwitch">产线</div>
+                        <div class="legend-r navSwitch">实验室</div>
+                        <div class="selectAll">
+                            <label for="navSelectAll"><span class="icon"></span> 全选</label>
+                            <input id="navSelectAll" checked type="checkbox" class="hidden">
+                        </div>
+                        <div class="labLine">
+                            <ul class="lab hidden">
+                                <li class="active"><a href=""><span class="icon"></span> 研发类实验室</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 中心实验室</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 模块商实验室</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 工厂实验室</a></li>
+                            </ul>
+                            <ul class="line">
+                                <li class="active"><a href=""><span class="icon"></span> 冰冷</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 洗涤</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 家空</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 商空</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 热水器</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 厨电</a></li>
+                                <li class="active"><a href=""><span class="icon"></span> 电视</a></li>
                             </ul>
                         </div>
+
+                        <ul class="legend-bottom">
+                            <li class="active"><a href=""><span class="icon"></span> 中心实验室</a></li>
+                            <li><a href=""><span class="icon"></span> 冰冷</a></li>
+                            <li><a href=""><span class="icon"></span> 洗涤</a></li>
+                            <li><a href=""><span class="icon"></span> 家空</a></li>
+                            <li><a href=""><span class="icon"></span> 商空</a></li>
+                            <li><a href=""><span class="icon"></span> 热水器</a></li>
+                            <li><a href=""><span class="icon"></span> 厨电</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
         </div>
 
     </div>
-    <!--<div id="middle"></div>-->
     <div id="right">
         <!--这里是后面4屏的代码-->
     </div>
@@ -141,334 +209,19 @@
 -->
 
 <script src="../asserts/js/jquery-2.2.4.js"></script>
-<script src="../asserts/echarts/echarts-3.5.2.js"></script>
-<script src="../js/manyEcharts.js"></script>
-<!--<script src="../img/bar_chip.png"></script>-->
-<!--<script src="../asserts/js/jquery.dragsort-0.5.2.js"></script>-->
-
 <script>
-    /*
-     $(function () {//拖动动作
-     $("#content").dragsort({
-     dragSelector: "#left,#right",
-     dragBetween: true,
-     dragEnd: function () {},
-     placeHolderTemplate: "<div class='placeHolder'><div></div></div>"
-     });
-     });
-     */
-    var pathSymbols = {
-        bar_chip: '../img/bar_chip.png'
-    };
-
-    //右上角的图表
-    var myChartFlatRT = echarts.init($("#l").find(".flat-right-top .myChart")[0]);
-    myChartFlatRT.setOption(getLineEcharts());
-    myChartFlatRT.setOption({
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            show: false,
-            data: ['专业能力']
-        },
-        textStyle: {
-            color: "#6cf",
-            fontSize: "60%"
-        },
-        grid: {
-//            show:true,
-            x: "25%",
-            x2: "15%",
-            y2: "12%"
-        },
-        xAxis: [
-            {
-                name: "数量",
-                type: 'value',
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "60%"
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        width: 0
-                    }
-                },
-                splitLine: {  //刻度线
-                    show: true,
-                    lineStyle: {
-                        color: "#234f65"
-                    }
-                },
-                max: 25,
-                offset: 5
-
-            }
-        ],
-        yAxis: [
-            {
-                name: "试验类别             ",
-                type: 'category',
-                data: ["运输", "用户体验", "EMC", "用户模拟", "安全", "可靠性", "性能"],
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "60%"
-                    }
-                },
-                nameGap: 10,
-                offset: 5,
-//                minInterval: .5
-            }
-        ],
-        series: [
-            {
-                name: '专业能力',
-//                type:'bar',
-                type: 'pictorialBar',
-//                barGap: '10%',
-                symbolRepeat: true,
-                symbolSize: ['40%', '80%'],
-                data: [{
-                    value: 0,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 1,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 2,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 4,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 4,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 20,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 22,
-                    symbol: pathSymbols.bar_chip
-                }]
-//                data: [0, 1, 2, 4, 4, 20, 22]
-            }
-        ]
-    });
-
-    //右下角的图表
-    var myChartFlatRB = echarts.init($("#l").find(".flat-right-bottom .myChart")[0]);
-    myChartFlatRB.setOption(getAreaEcharts());
-    myChartFlatRB.setOption({
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            show: false,
-            data: ['试验目的']
-        },
-        textStyle: {
-            color: "#6cf",
-            fontSize: "60%"
-        },
-        grid: {
-//            show:true,
-            x: "25%",
-            x2: "10%",
-            y: "48%",
-            y2: "12%"
-        },
-        xAxis: [
-            {
-                name: "",
-                type: 'category',
-                data: ["对比试验", "新品调试", "新品确认", "小批验证", "入厂/出厂", "年度型检", "监督抽测"],
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "50%"
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        width: 0
-                    }
-                },
-                splitLine: {  //刻度线
-                    show: false,
-                    lineStyle: {
-                        color: "#234f65"
-                    }
-                },
-                offset: 5
-
-            }
-        ],
-        yAxis: [
-            {
-                name: "数量       ",
-                type: 'value',
-
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "60%"
-                    }
-                },
-                nameGap: 10,
-                offset: 5,
-                max: 500
-//                minInterval: .5
-            }
-        ],
-        series: [
-            {
-                name: '试验目的',
-                type: 'line',
-                symbolRepeat: true,
-                symbolSize: ['40%', '80%'],
-                itemStyle: {
-                    normal: {
-                        color: "66ccff"
-                    }
-                },
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0, color: 'rgba(102,204,255,1)' // 0% 处的颜色
-                            }, {
-                                offset: 1, color: 'rgba(102,204,255,.1)' // 100% 处的颜色
-                            }],
-                            globalCoord: false // 缺省为 false
-                        }
-                    },
-                },
-
-                data: [{
-                    value: 380,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 450,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 150,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 220,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 250,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 320,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 360,
-                    symbol: pathSymbols.bar_chip
-                }]
-            }
-        ]
-    });
-
-    //左下角的图表
-    var myChartFlatLB = echarts.init($("#l").find(".flat-left-bottom .myChart")[0]);
-    myChartFlatLB.setOption(getLineEcharts());
-    myChartFlatLB.setOption({
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            show: false,
-            data: ['实验室统计']
-        },
-        textStyle: {
-            color: "#6cf",
-            fontSize: "60%"
-        },
-        grid: {
-//            show:true,
-            x: "25%",
-            x2: "15%",
-            y: "40%",
-            y2: "12%"
-        },
-        xAxis: [
-            {
-                name: "",
-                type: 'category',
-                data: ["研究实验室", "中心实验室", "工厂实验室", "模块实验室"],
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "60%"
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        width: 0
-                    }
-                },
-
-                offset: 5
-
-            }
-        ],
-        yAxis: [
-            {
-                name: "数量       ",
-                type: 'value',
-                axisLabel: {
-                    textStyle: {
-                        color: "#66ccff",
-                        fontSize: "60%"
-                    }
-                },
-                nameGap: 10,
-                offset: 5,
-              max: 300,
-                splitLine: {  //刻度线
-                    show: true,
-                    lineStyle: {
-                        color: "#234f65"
-                    }
-                },
-            }],
-        series: [
-            {
-                name: '专业能力',
-//                type:'bar',
-                type: 'pictorialBar',
-//                barGap: '10%',
-                symbolRepeat: true,
-                symbolSize: ['40%', '20%'],
-                data: [{
-                    value: 234,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 148,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 102,
-                    symbol: pathSymbols.bar_chip
-                }, {
-                    value: 76,
-                    symbol: pathSymbols.bar_chip
-                }]
-            }
-        ]
-    });
-
-    var myCharts = [myChartFlatRT, myChartFlatRB,myChartFlatLB]
+    function pageResize() {
+        var h = $(window).height();
+        console.log(h);
+        $("#content").css("width",h*16*7/(9*3));
+    }
+    pageResize();
 </script>
+<script src="../asserts/echarts/echarts-3.5.2.js"></script>
+<script src="../asserts/echarts/wordcloudFromNet.js"></script>
+<script src="../js/manyEcharts.js"></script>
+<script src="../js/leftCharts.js"></script>
+
 <script src="../js/main_left.js"></script>
 </body>
 </html>
