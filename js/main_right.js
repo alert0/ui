@@ -20,13 +20,23 @@ option = {
             max: 100,
             splitNumber: 5,
             radius: '80%',
-            textStyle: {},
+            textStyle: {
+                fontSize:'60%'
+            },
             axisLine: {            // 坐标轴线
+                show:false,
                 lineStyle: {       // 属性lineStyle控制线条样式
                     width: 7,
                     color: [[0.2, '#66ccff'], [0.8, '#66ccff'], [1, '#66ccff']]
-                }
+                },
+
             },
+            // axisLabel:{
+            //     show:false,
+            //     textStyle:{
+            //         fontSize:'50%'
+            //     }
+            // },
             axisTick: {            // 坐标轴小标记
                 length: 5,        // 属性length控制线长
                 lineStyle: {       // 属性lineStyle控制线条样式
@@ -54,7 +64,7 @@ option = {
             title: {
                 offsetCenter: [0, '110%'],       // x, y，单位px
                 textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-                    fontSize: 14,
+                    fontSize: 12,
                     color: '#66ccff',
 //                        fontStyle: 'italic'
                 },
@@ -85,7 +95,7 @@ option = {
                     width: 7,
                     color: [[0.2, '#66ccff'], [0.8, '#66ccff'], [1, '#66ccff']]
 
-                }
+                },
             },
             axisTick: {            // 坐标轴小标记
                 length: 7,        // 属性length控制线长
@@ -421,7 +431,7 @@ myChart3.setOption({
     },
     series: [
         {
-            symbolSize: ['40%', '10%'],
+            symbolSize: ['50%', '10%'],
             data: [{
                 value: 134,
                 symbol: bar_chip
@@ -443,35 +453,38 @@ var myChart4 = echarts.init(document.getElementById("myChart4"));
 myChart4.setOption(getCenterPie());
 var dataStyle = {
     normal: {
-        label: {show: false},
-        labelLine: {show: false}
+        label: {show: true},
+        labelLine: {show: true}
     }
 };
 var placeHolderStyle = {
     normal: {
         color: 'rgba(0,0,0,0)',
-        label: {show: false},
-        labelLine: {show: false}
+        label: {
+            normal: {
+                show:true,
+                textStyle: {
+                    color: '#66ccff'
+                },
+            }
+        },
+        labelLine: {
+            normal: {
+                show: true,
+                lineStyle: {
+                    color: 'gray'
+                },
+                smooth: 0.2,
+                length: 1,
+                length2: 2
+            }
+        },
     },
     emphasis: {
         color: 'rgba(0,0,0,0)'
     }
 };
 myChart4.setOption({
-
-    legend: {
-        // // right:0,  //图例组件离右边的距离
-        // orient :' horizontal',  //布局  纵向布局
-        // // width:80,      //图行例组件的宽度,默认自适应
-        // x : 'right',   //图例显示在右边
-        // // itemWidth:10,  //图例标记的图形宽度
-        // // itemHeight:10, //图例标记的图形高度
-        textStyle: {    //图例文字的样式
-            color: '#66ccff',
-            fontSize: 12
-        },
-        data: ['整机', '模块']
-    },
     color: ['#4397f7', '#66ccff'],
     series: [
         {
@@ -480,32 +493,14 @@ myChart4.setOption({
             clockWise: false,
             radius: [40, 50],
             itemStyle: dataStyle,
-            label: {
-                normal: {
-                    textStyle: {
-                        color: '#66ccff'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    show: true,
-                    lineStyle: {
-                        color: 'gray'
-                    },
-                    smooth: 0.2,
-                    length: 3,
-                    length2: 5
-                }
-            },
             data: [
                 {
                     value: 68,
-                    name: '68%的人表示过的不错'
+                    name: '整机'
                 },
                 {
                     value: 32,
-                    name: '',
+                    name: '整机',
                     itemStyle: placeHolderStyle
                 }
             ]
@@ -519,11 +514,11 @@ myChart4.setOption({
             data: [
                 {
                     value: 29,
-                    name: ''
+                    name: '模块'
                 },
                 {
                     value: 71,
-                    name: 'invisible',
+                    name: '模块',
                     itemStyle: placeHolderStyle
                 }
             ]
@@ -544,32 +539,14 @@ myChart5.setOption({
             clockWise: false,
             radius: [40, 50],
             itemStyle: dataStyle,
-            label: {
-                normal: {
-                    textStyle: {
-                        color: '#66ccff'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    show: true,
-                    lineStyle: {
-                        color: 'gray'
-                    },
-                    smooth: 0.2,
-                    length: 3,
-                    length2: 5
-                }
-            },
             data: [
                 {
                     value: 68,
-                    name: ''
+                    name: '整机'
                 },
                 {
                     value: 32,
-                    name: 'invisible',
+                    name: '整机',
                     itemStyle: placeHolderStyle
                 }
             ]
@@ -583,11 +560,11 @@ myChart5.setOption({
             data: [
                 {
                     value: 29,
-                    name: ''
+                    name: '模块'
                 },
                 {
                     value: 71,
-                    name: 'invisible',
+                    name: '模块',
                     itemStyle: placeHolderStyle
                 }
             ]
@@ -1173,6 +1150,613 @@ myChart13.setOption({
             name: "月份",
             type: 'category',
             data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        }
+    ],
+    series: [{
+        name: '2015',
+        type: 'pictorialBar',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        barCategoryGap: '40%',
+        data: [{
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }
+        ]
+    }, {
+        name: '2016',
+        type: 'pictorialBar',
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        data: [{
+            value: 184,
+            symbol: bar_chip
+        }, {
+            value: 29,
+            symbol: bar_chip
+        }, {
+            value: 73,
+            symbol: bar_chip
+        }, {
+            value: 91,
+            symbol: bar_chip
+        }, {
+            value: 95,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }
+        ]
+    }]
+});
+
+
+//数据挖掘 量产一致与不一致占比
+var myChart14 = echarts.init(document.getElementById("myChart14"));
+myChart14.setOption(getRoseEcharts());
+myChart14.setOption({
+    color: ['#66ccff', '#4397f7'],
+    grid:{
+        x:10
+    },
+    legend: {
+        x: 'right',
+        y: 'top',
+        show: true,
+        textStyle: {
+            color: '#66ccff',
+            fontSize: 11,
+        },
+        orient: 'vertical',  //布局  纵向布局
+        data: ['量产一致型号数', '量产不一致型号数'],
+        itemWidth: 10,  //图例标记的图形宽度
+        itemHeight: 2, //图例标记的图形高度
+    },
+    series: [
+        {
+            name: '',
+            type: 'pie',
+            radius: [0, 50],
+            center: ['45%', '60%'],
+            roseType: 'radius',
+            label: {
+                normal: {
+                    show: true,
+                    position: "inside",
+                    formatter: "{d}%"
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data: [
+                {value: 10, name: '量产一致型号数'},
+                {value: 15, name: '量产不一致型号数'}
+            ]
+        },
+    ]
+});
+
+//数据挖掘  量产一致
+var myChart15= echarts.init(document.getElementById("myChart15"));
+myChart15.setOption(getBarEcharts());
+myChart15.setOption({
+    color: ['#66ccff', '#a5fff1'],
+    legend: {
+        show: true,
+        data: ['2015年', '2016年']
+    },
+    grid: {
+//            show:true,
+        x: "12%",
+        x2: "15%",
+        y: '20%',
+        y2: "17%"
+    },
+    yAxis: [
+        {
+            name: "数量",
+            type: 'value'
+        }
+    ],
+    xAxis: [
+        {
+            name: "月份",
+            type: 'category',
+            data: ["冰冷",'家空','洗涤','商空','热水器','厨电'],
+            axisLabel: {
+                 // rotate: 30,
+
+            },
+        }
+    ],
+    series: [{
+        name: '2015',
+        type: 'pictorialBar',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        barCategoryGap: '40%',
+        data: [{
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }
+        ]
+    }, {
+        name: '2016',
+        type: 'pictorialBar',
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        data: [{
+            value: 184,
+            symbol: bar_chip
+        }, {
+            value: 29,
+            symbol: bar_chip
+        }, {
+            value: 73,
+            symbol: bar_chip
+        }, {
+            value: 91,
+            symbol: bar_chip
+        }, {
+            value: 95,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }
+        ]
+    }]
+});
+
+//数据量挖掘 产不一致性
+var myChart16 = echarts.init(document.getElementById("myChart16"));
+myChart16.setOption(getBarEcharts());
+myChart16.setOption({
+    color: ['#00e673', '#66ffcc'],
+    legend: {
+        show: true,
+        data: ['2015年', '2016年'],
+        orient: ' vertical' //布局  纵向布局
+    },
+    grid: {
+//            show:true,
+        x: "12%",
+        x2: "15%",
+        y: '20%',
+        y2: "17%"
+    },
+    yAxis: [
+        {
+            name: "数量",
+            type: 'value'
+        }
+    ],
+    xAxis: [
+        {
+            name: "月份",
+            type: 'category',
+            rote:30,
+            data: ["冰冷",'家空','洗涤','商空','热水器','厨电']
+        }
+    ],
+    series: [{
+        name: '2015',
+        type: 'pictorialBar',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        barCategoryGap: '40%',
+        data: [{
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }
+        ]
+    }, {
+        name: '2016',
+        type: 'pictorialBar',
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        data: [{
+            value: 184,
+            symbol: bar_chip
+        }, {
+            value: 29,
+            symbol: bar_chip
+        }, {
+            value: 73,
+            symbol: bar_chip
+        }, {
+            value: 91,
+            symbol: bar_chip
+        }, {
+            value: 95,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }
+        ]
+    }]
+});
+
+
+//数据挖掘 共产一致与不一致占比
+var myChart17 = echarts.init(document.getElementById("myChart17"));
+myChart17.setOption(getRoseEcharts());
+myChart17.setOption({
+    color: ['#66ccff', '#4397f7'],
+    grid:{
+        x:10
+    },
+    legend: {
+        x: 'right',
+        y: 'top',
+        show: true,
+        textStyle: {
+            color: '#66ccff',
+            fontSize: 11,
+        },
+        orient: 'vertical',  //布局  纵向布局
+        data: ['量产一致型号数', '量产不一致型号数'],
+        itemWidth: 10,  //图例标记的图形宽度
+        itemHeight: 2, //图例标记的图形高度
+    },
+    series: [
+        {
+            name: '',
+            type: 'pie',
+            radius: [0, 50],
+            center: ['45%', '60%'],
+            roseType: 'radius',
+            label: {
+                normal: {
+                    show: true,
+                    position: "inside",
+                    formatter: "{d}%"
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data: [
+                {value: 10, name: '量产一致型号数'},
+                {value: 15, name: '量产不一致型号数'}
+            ]
+        },
+    ]
+});
+
+//数据挖掘  共产一致
+var myChart18= echarts.init(document.getElementById("myChart18"));
+myChart18.setOption(getBarEcharts());
+myChart18.setOption({
+    color: ['#66ccff', '#a5fff1'],
+    legend: {
+        show: true,
+        data: ['2015年', '2016年']
+    },
+    grid: {
+//            show:true,
+        x: "12%",
+        x2: "15%",
+        y: '20%',
+        y2: "17%"
+    },
+    yAxis: [
+        {
+            name: "数量",
+            type: 'value'
+        }
+    ],
+    xAxis: [
+        {
+            name: "月份",
+            type: 'category',
+            rote:30,
+            data: ["冰冷",'家空','洗涤','商空','热水器','厨电']
+        }
+    ],
+    series: [{
+        name: '2015',
+        type: 'pictorialBar',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        barCategoryGap: '40%',
+        data: [{
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 157,
+            symbol: bar_chip
+        }, {
+            value: 21,
+            symbol: bar_chip
+        }, {
+            value: 66,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }
+        ]
+    }, {
+        name: '2016',
+        type: 'pictorialBar',
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        data: [{
+            value: 184,
+            symbol: bar_chip
+        }, {
+            value: 29,
+            symbol: bar_chip
+        }, {
+            value: 73,
+            symbol: bar_chip
+        }, {
+            value: 91,
+            symbol: bar_chip
+        }, {
+            value: 95,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }, {
+            value: 123,
+            symbol: bar_chip
+        }, {
+            value: 78,
+            symbol: bar_chip
+        }
+        ]
+    }]
+});
+
+//数据量挖掘 共产不一致性
+var myChart19 = echarts.init(document.getElementById("myChart19"));
+myChart19.setOption(getBarEcharts());
+myChart19.setOption({
+    color: ['#00e673', '#66ffcc'],
+    legend: {
+        show: true,
+        data: ['2015年', '2016年'],
+        orient: ' vertical' //布局  纵向布局
+    },
+    grid: {
+//            show:true,
+        x: "12%",
+        x2: "15%",
+        y: '20%',
+        y2: "14%"
+    },
+    yAxis: [
+        {
+            name: "数量",
+            type: 'value'
+        }
+    ],
+    xAxis: [
+        {
+            name: "月份",
+            type: 'category',
+            rote:30,
+            data: ["冰冷",'家空','洗涤','商空','热水器','厨电']
         }
     ],
     series: [{

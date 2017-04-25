@@ -70,9 +70,29 @@
                 <li class="tab-item">数据挖掘应用</li>
             </ul>
         </div>
+        <div class="lab">
+            <ul class="lab_img">
+                <!--<li><img src="../img/TotalState/yf.png" alt=""></li>-->
+                <!--<li><img src="../img/TotalState/zx.png" alt=""></li>-->
+                <!--<li><img src="../img/TotalState/mks.png" alt=""></li>-->
+                <!--<li><img src="../img/TotalState/gc.png" alt=""></li>-->
+                <li class="lab_img_item"></li>
+                <li class="lab_img_item"></li>
+                <li class="lab_img_item"></li>
+                <li class="lab_img_item"></li>
+            </ul>
+            <br>
+            <ul class="lab_word">
+                <li class="lab_item">工厂实验室</li>
+                <li class="lab_item">模块商实验室</li>
+                <li class="lab_item">中心实验室</li>
+                <li class="lab_item">研发实验室</li>
+            </ul>
+        </div>
         <!--总状态-->
         <div class="box selected total_state">
             <div class="total_top">
+                <div class="total_name">实验室状态</div>
                 <div class="total_top_1">
                     <div class="echarts_title">设施状态</div>
                     <div id="myChart1"></div>
@@ -182,7 +202,7 @@
                     <div class="echarts_title">标准状态</div>
                     <div class="total_top_3_left">
                         <ul>
-                            <li>制修订情况</li>
+                            <li>起草数</li>
                             <li>246</li>
                         </ul>
                         <ul>
@@ -200,15 +220,15 @@
                     <div class="echarts_line">
                         <span>应具备数</span></br><span>380</span>
                     </div>
-
                 </div>
             </div>
             <div class="total_center">
+                <div class="total_name">数据结果</div>
                 <div class="total_center_1">
                     <div class="echarts_title">一次合格率</div>
                     <div class="echarts_title_left">
                         <ul>
-                            <li>海尔今年实验室一次合格率为<span>98%</span></li>
+                            <li>当年一次合格率为<span>98%</span></li>
                             <li style="display: inline-block">同比上升</li><span>50%</span>
                         </ul>
                     </div>
@@ -218,7 +238,7 @@
                     <div class="echarts_title">问题闭环率</div>
                     <div class="echarts_title_left">
                         <ul>
-                            <li>海尔今年实验室问题闭环率为<span>98%</span></li>
+                            <li>当年问题闭环率为<span>98%</span></li>
                             <li style="display: inline-block">同比上升</li><span>50%</span>
                         </ul>
                     </div>
@@ -234,6 +254,7 @@
                 </div>
             </div>
             <div class="total_bottom">
+                <div class="total_name">数据应用</div>
                 <div class="total_bottom_left">
                     <div class="total_bottom_pie">
                         <div id="myChart8"></div>
@@ -277,7 +298,26 @@
         <!--数据结果-->
         <div class="box shuju_result">
             <div class="shuju_result_top">
-                <div class="shuju_result_top_left"></div>
+                <div class="shuju_result_top_left">
+                    <div class="left_name">
+                       <div class="left_name1 fl">
+                           <ul>
+                               <li>整机</li>
+                               <li class="left_name_num">1358<b class="left_name_icon">1</b><span class="left_name_up">0.05%</span></li>
+                           </ul>
+                       </div>
+                        <div class="left_name2 fl">
+                            <ul>
+                                <li>模块</li>
+                                <li class="left_name_num">1358<b class="left_name_icon">1</b><span class="left_name_up">0.05%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left_bottom">
+                        <div id="myChart20"></div>
+                        <div id="myChart21"></div>
+                    </div>
+                </div>
                 <div class="shuju_result_top_center"></div>
                 <div class="shuju_result_top_rihght"></div>
             </div>
@@ -288,7 +328,35 @@
         </div>
         <!--数据挖掘应用-->
         <div class="box shuju_apply">
-            <div class="shuju_apply_top"></div>
+            <div class="shuju_apply_top">
+                <div class="shuju_top_left">
+                    <div class="shuju_top_pie">
+                        <div id="myChart14"></div>
+                    </div>
+                    <div class="shuju_top_bar1">
+                        <div class="echarts_title echarts_title1">量产一致型号数</div>
+                        <div id="myChart15"></div>
+                    </div>
+                    <div class="shuju_top_bar2">
+                        <div class="echarts_title echarts_title1">量产不一致型号数</div>
+                        <div id="myChart16"></div>
+                    </div>
+                </div>
+                <div class="shuju_top_right">
+                    <div class="shuju_top_pie">
+                        <div id="myChart17"></div>
+                    </div>
+                    <div class="shuju_top_bar1">
+                        <div class="echarts_title echarts_title1">共产一致型号数</div>
+                        <div id="myChart18"></div>
+                    </div>
+                    <div class="shuju_top_bar2">
+                        <div class="echarts_title echarts_title1">共产不一致型号数</div>
+                        <div id="myChart19"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="shuju_apply_center"></div>
             <div class="shuju_apply_bottom"></div>
         </div>
     </div>
@@ -318,6 +386,10 @@
             // 4. 通过索引号对应关系 让这个索引号对应的内容展示出来
             //.selected display:block
             $(".box:eq(" + index + ")").addClass("selected").siblings().removeClass("selected");
+        });
+
+        $(".lab_item").click(function () {
+            $(this).addClass("word_active").siblings().removeClass("word_active");
         });
     });
 
