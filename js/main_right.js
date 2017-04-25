@@ -370,7 +370,7 @@ option = {
         },
         {
             type: 'pie',
-            center: ['30%', '75%'],
+            center: ['35%', '75%'],
             radius: radius,
             y: '55%',   // for funnel
             x: '20%',    // for funnel
@@ -382,7 +382,7 @@ option = {
         },
         {
             type: 'pie',
-            center: ['50%', '75%'],
+            center: ['60%', '75%'],
             radius: radius,
             y: '55%',   // for funnel
             x: '40%', // for funnel
@@ -392,21 +392,21 @@ option = {
                 {name: '行业标准', value: 22, itemStyle: labelTop}
             ]
         },
+        // {
+        //     type: 'pie',
+        //     center: ['70%', '75%'],
+        //     radius: radius,
+        //     y: '55%',   // for funnel
+        //     x: '60%', // for funnel
+        //     itemStyle: labelFromatter,
+        //     data: [
+        //         {name: 'other', value: 83, itemStyle: labelBottom},
+        //         {name: '当地标准', value: 17, itemStyle: labelTop}
+        //     ]
+        // },
         {
             type: 'pie',
-            center: ['70%', '75%'],
-            radius: radius,
-            y: '55%',   // for funnel
-            x: '60%', // for funnel
-            itemStyle: labelFromatter,
-            data: [
-                {name: 'other', value: 83, itemStyle: labelBottom},
-                {name: '当地标准', value: 17, itemStyle: labelTop}
-            ]
-        },
-        {
-            type: 'pie',
-            center: ['90%', '75%'],
+            center: ['85%', '75%'],
             radius: radius,
             y: '55%',   // for funnel
             x: '80%', // for funnel
@@ -469,8 +469,25 @@ var myChart4 = echarts.init(document.getElementById("myChart4"));
 myChart4.setOption(getCenterPie());
 var dataStyle = {
     normal: {
-        label: {show: true},
-        labelLine: {show: true}
+        label: {
+            normal: {
+                show:false,
+                textStyle: {
+                    color: '#66ccff'
+                },
+            }
+        },
+        labelLine: {
+            normal: {
+                show: false,
+                lineStyle: {
+                    color: 'gray'
+                },
+                smooth: 0.2,
+                length: 1,
+                length2: 2
+            }
+        },
     }
 };
 var placeHolderStyle = {
@@ -507,38 +524,40 @@ myChart4.setOption({
     color: ['#4397f7', '#66ccff'],
     series: [
         {
-            name: '1',
-            type: 'pie',
-            clockWise: false,
-            radius: [40, 50],
-            itemStyle: dataStyle,
-            data: [
-                {
-                    value: 68,
-                    name: '整机'
-                },
-                {
-                    value: 32,
-                    name: '整机',
-                    itemStyle: placeHolderStyle
-                }
-            ]
-        },
-        {
-            name: '2',
+            name: '一次合格率',
             type: 'pie',
             clockWise: false,
             radius: [50, 60],
             itemStyle: dataStyle,
             data: [
                 {
+                    value: 68,
+                    name: '整机',
+                    itemStyle: placeHolderStyle
+                },
+                {
+                    value: 32,
+                    name: '整机',
+                    // itemStyle: placeHolderStyle
+                }
+            ]
+        },
+        {
+            name: '一次合格率',
+            type: 'pie',
+            clockWise: false,
+            radius: [40, 50],
+            itemStyle: dataStyle,
+            data: [
+                {
                     value: 29,
-                    name: '模块'
+                    name: '模块',
+                    itemStyle: placeHolderStyle
                 },
                 {
                     value: 71,
                     name: '模块',
-                    itemStyle: placeHolderStyle
+                    // itemStyle: placeHolderStyle
                 }
             ]
         }
@@ -556,38 +575,40 @@ myChart5.setOption({
     color: ['#4397f7', '#66ccff'],
     series: [
         {
-            name: '1',
-            type: 'pie',
-            clockWise: false,
-            radius: [40, 50],
-            itemStyle: dataStyle,
-            data: [
-                {
-                    value: 68,
-                    name: '整机'
-                },
-                {
-                    value: 32,
-                    name: '整机',
-                    itemStyle: placeHolderStyle
-                }
-            ]
-        },
-        {
-            name: '2',
+            name: '问题闭环率',
             type: 'pie',
             clockWise: false,
             radius: [50, 60],
             itemStyle: dataStyle,
             data: [
                 {
+                    value: 68,
+                    name: '整机',
+                    itemStyle: placeHolderStyle
+                },
+                {
+                    value: 32,
+                    name: '整机',
+                    // itemStyle: placeHolderStyle
+                }
+            ]
+        },
+        {
+            name: '问题闭环率',
+            type: 'pie',
+            clockWise: false,
+            radius: [40, 50],
+            itemStyle: dataStyle,
+            data: [
+                {
                     value: 29,
-                    name: '模块'
+                    name: '模块',
+                    itemStyle: placeHolderStyle
                 },
                 {
                     value: 71,
                     name: '模块',
-                    itemStyle: placeHolderStyle
+                    // itemStyle: placeHolderStyle
                 }
             ]
         }
@@ -866,131 +887,131 @@ myChart9.setOption({
     }]
 });
 
-//量产不一致性
-var myChart10 = echarts.init(document.getElementById("myChart10"));
-myChart10.setOption(getBarEcharts());
-myChart10.setOption({
-    textStyle:{
-        fontSize:8
-    },
-    color: ['#00e673', '#66ffcc'],
-    legend: {
-        show: true,
-        data: ['2015年', '2016年'],
-        orient: ' vertical' //布局  纵向布局
-    },
-    grid: {
-//            show:true,
-        x: "12%",
-        x2: "15%",
-        y: '20%',
-        y2: "17%"
-    },
-    yAxis: [
-        {
-            name: "数量",
-            type: 'value'
-        }
-    ],
-    xAxis: [
-        {
-            name: "月份",
-            type: 'category',
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        }
-    ],
-    series: [{
-        name: '2015',
-        type: 'pictorialBar',
-        label: labelSetting,
-        symbolRepeat: true,
-        symbolSize: ['80%', '60%'],
-        barCategoryGap: '40%',
-        data: [{
-            value: 157,
-            symbol: bar_chip
-        }, {
-            value: 21,
-            symbol: bar_chip
-        }, {
-            value: 66,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 157,
-            symbol: bar_chip
-        }, {
-            value: 21,
-            symbol: bar_chip
-        }, {
-            value: 66,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }
-        ]
-    }, {
-        name: '2016',
-        type: 'pictorialBar',
-        barGap: '10%',
-        label: labelSetting,
-        symbolRepeat: true,
-        symbolSize: ['80%', '60%'],
-        data: [{
-            value: 184,
-            symbol: bar_chip
-        }, {
-            value: 29,
-            symbol: bar_chip
-        }, {
-            value: 73,
-            symbol: bar_chip
-        }, {
-            value: 91,
-            symbol: bar_chip
-        }, {
-            value: 95,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }
-        ]
-    }]
-});
+// //量产不一致性
+// var myChart10 = echarts.init(document.getElementById("myChart10"));
+// myChart10.setOption(getBarEcharts());
+// myChart10.setOption({
+//     textStyle:{
+//         fontSize:8
+//     },
+//     color: ['#00e673', '#66ffcc'],
+//     legend: {
+//         show: true,
+//         data: ['2015年', '2016年'],
+//         orient: ' vertical' //布局  纵向布局
+//     },
+//     grid: {
+// //            show:true,
+//         x: "12%",
+//         x2: "15%",
+//         y: '20%',
+//         y2: "17%"
+//     },
+//     yAxis: [
+//         {
+//             name: "数量",
+//             type: 'value'
+//         }
+//     ],
+//     xAxis: [
+//         {
+//             name: "月份",
+//             type: 'category',
+//             data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+//         }
+//     ],
+//     series: [{
+//         name: '2015',
+//         type: 'pictorialBar',
+//         label: labelSetting,
+//         symbolRepeat: true,
+//         symbolSize: ['80%', '60%'],
+//         barCategoryGap: '40%',
+//         data: [{
+//             value: 157,
+//             symbol: bar_chip
+//         }, {
+//             value: 21,
+//             symbol: bar_chip
+//         }, {
+//             value: 66,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 157,
+//             symbol: bar_chip
+//         }, {
+//             value: 21,
+//             symbol: bar_chip
+//         }, {
+//             value: 66,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }
+//         ]
+//     }, {
+//         name: '2016',
+//         type: 'pictorialBar',
+//         barGap: '10%',
+//         label: labelSetting,
+//         symbolRepeat: true,
+//         symbolSize: ['80%', '60%'],
+//         data: [{
+//             value: 184,
+//             symbol: bar_chip
+//         }, {
+//             value: 29,
+//             symbol: bar_chip
+//         }, {
+//             value: 73,
+//             symbol: bar_chip
+//         }, {
+//             value: 91,
+//             symbol: bar_chip
+//         }, {
+//             value: 95,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }
+//         ]
+//     }]
+// });
 
 //共产一致与不一致占比
 var myChart11 = echarts.init(document.getElementById("myChart11"));
@@ -1166,131 +1187,131 @@ myChart12.setOption({
     }]
 });
 
-//共产不一致性
-var myChart13 = echarts.init(document.getElementById("myChart13"));
-myChart13.setOption(getBarEcharts());
-myChart13.setOption({
-    textStyle:{
-        fontSize:8
-    },
-    color: ['#00e673', '#66ffcc'],
-    legend: {
-        show: true,
-        data: ['2015年', '2016年'],
-        orient: ' vertical' //布局  纵向布局
-    },
-    grid: {
-//            show:true,
-        x: "12%",
-        x2: "15%",
-        y: '20%',
-        y2: "17%"
-    },
-    yAxis: [
-        {
-            name: "数量",
-            type: 'value'
-        }
-    ],
-    xAxis: [
-        {
-            name: "月份",
-            type: 'category',
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        }
-    ],
-    series: [{
-        name: '2015',
-        type: 'pictorialBar',
-        label: labelSetting,
-        symbolRepeat: true,
-        symbolSize: ['80%', '60%'],
-        barCategoryGap: '40%',
-        data: [{
-            value: 157,
-            symbol: bar_chip
-        }, {
-            value: 21,
-            symbol: bar_chip
-        }, {
-            value: 66,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 157,
-            symbol: bar_chip
-        }, {
-            value: 21,
-            symbol: bar_chip
-        }, {
-            value: 66,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }
-        ]
-    }, {
-        name: '2016',
-        type: 'pictorialBar',
-        barGap: '10%',
-        label: labelSetting,
-        symbolRepeat: true,
-        symbolSize: ['80%', '60%'],
-        data: [{
-            value: 184,
-            symbol: bar_chip
-        }, {
-            value: 29,
-            symbol: bar_chip
-        }, {
-            value: 73,
-            symbol: bar_chip
-        }, {
-            value: 91,
-            symbol: bar_chip
-        }, {
-            value: 95,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }, {
-            value: 123,
-            symbol: bar_chip
-        }, {
-            value: 78,
-            symbol: bar_chip
-        }
-        ]
-    }]
-});
+// //共产不一致性
+// var myChart13 = echarts.init(document.getElementById("myChart13"));
+// myChart13.setOption(getBarEcharts());
+// myChart13.setOption({
+//     textStyle:{
+//         fontSize:8
+//     },
+//     color: ['#00e673', '#66ffcc'],
+//     legend: {
+//         show: true,
+//         data: ['2015年', '2016年'],
+//         orient: ' vertical' //布局  纵向布局
+//     },
+//     grid: {
+// //            show:true,
+//         x: "12%",
+//         x2: "15%",
+//         y: '20%',
+//         y2: "17%"
+//     },
+//     yAxis: [
+//         {
+//             name: "数量",
+//             type: 'value'
+//         }
+//     ],
+//     xAxis: [
+//         {
+//             name: "月份",
+//             type: 'category',
+//             data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+//         }
+//     ],
+//     series: [{
+//         name: '2015',
+//         type: 'pictorialBar',
+//         label: labelSetting,
+//         symbolRepeat: true,
+//         symbolSize: ['80%', '60%'],
+//         barCategoryGap: '40%',
+//         data: [{
+//             value: 157,
+//             symbol: bar_chip
+//         }, {
+//             value: 21,
+//             symbol: bar_chip
+//         }, {
+//             value: 66,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 157,
+//             symbol: bar_chip
+//         }, {
+//             value: 21,
+//             symbol: bar_chip
+//         }, {
+//             value: 66,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }
+//         ]
+//     }, {
+//         name: '2016',
+//         type: 'pictorialBar',
+//         barGap: '10%',
+//         label: labelSetting,
+//         symbolRepeat: true,
+//         symbolSize: ['80%', '60%'],
+//         data: [{
+//             value: 184,
+//             symbol: bar_chip
+//         }, {
+//             value: 29,
+//             symbol: bar_chip
+//         }, {
+//             value: 73,
+//             symbol: bar_chip
+//         }, {
+//             value: 91,
+//             symbol: bar_chip
+//         }, {
+//             value: 95,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }, {
+//             value: 123,
+//             symbol: bar_chip
+//         }, {
+//             value: 78,
+//             symbol: bar_chip
+//         }
+//         ]
+//     }]
+// });
 
 
 //数据挖掘 量产一致与不一致占比
