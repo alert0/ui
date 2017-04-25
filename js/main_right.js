@@ -31,12 +31,12 @@ option = {
                 },
 
             },
-            // axisLabel:{
-            //     show:false,
-            //     textStyle:{
-            //         fontSize:'50%'
-            //     }
-            // },
+            axisLabel:{
+                show:true,
+                textStyle:{
+                    fontSize:8
+                }
+            },
             axisTick: {            // 坐标轴小标记
                 length: 5,        // 属性length控制线长
                 lineStyle: {       // 属性lineStyle控制线条样式
@@ -96,6 +96,12 @@ option = {
                     color: [[0.2, '#66ccff'], [0.8, '#66ccff'], [1, '#66ccff']]
 
                 },
+            },
+            axisLabel:{
+                show:true,
+                textStyle:{
+                    fontSize:8
+                }
             },
             axisTick: {            // 坐标轴小标记
                 length: 7,        // 属性length控制线长
@@ -157,6 +163,12 @@ option = {
 
                 }
             },
+            axisLabel:{
+                show:true,
+                textStyle:{
+                    fontSize:8
+                }
+            },
             axisTick: {            // 坐标轴小标记
                 length: 7,        // 属性length控制线长
                 lineStyle: {       // 属性lineStyle控制线条样式
@@ -215,7 +227,8 @@ var labelTop = {
             formatter: '{b}',
             textStyle: {
                 baseline: 'bottom',
-                color: '#66ccff'
+                color: '#66ccff',
+                fontSize:8
             }
         },
         labelLine: {
@@ -412,11 +425,14 @@ var myChart3 = echarts.init(document.getElementById("myChart3"));
 myChart3.setOption(getBarEcharts());
 var bar_chip = '../img/bar_chip.png';
 myChart3.setOption({
+    textStyle:{
+        fontSize:8
+    },
     yAxis: [
         {
             name: "数量",
-            type: 'value'
-        }
+            type: 'value',
+        },
     ],
     xAxis: [
         {
@@ -485,6 +501,9 @@ var placeHolderStyle = {
     }
 };
 myChart4.setOption({
+    // textStyle:{
+    //     fontSize:8
+    // },
     color: ['#4397f7', '#66ccff'],
     series: [
         {
@@ -531,6 +550,9 @@ myChart4.setOption({
 var myChart5 = echarts.init(document.getElementById("myChart5"));
 myChart5.setOption(getCenterPie());
 myChart5.setOption({
+    // textStyle:{
+    //     fontSize:8
+    // },
     color: ['#4397f7', '#66ccff'],
     series: [
         {
@@ -577,9 +599,15 @@ myChart5.setOption({
 var myChart6 = echarts.init(document.getElementById("myChart6"));
 myChart6.setOption(getAreaEcharts());
 myChart6.setOption({
+    textStyle:{
+        fontSize:8
+    },
     legend: {
         show: true,
-        data: ['整机', '模块']
+        data: ['整机', '模块'],
+        textStyle:{
+            fontSize:8
+        },
     },
     grid: {
         x: 23,
@@ -615,9 +643,15 @@ myChart6.setOption({
 var myChart7 = echarts.init(document.getElementById("myChart7"));
 myChart7.setOption(getAreaEcharts());
 myChart7.setOption({
+    textStyle:{
+        fontSize:8
+    },
     legend: {
         show: true,
-        data: ['整机', '模块']
+        data: ['整机', '模块'],
+        textStyle:{
+            fontSize:8
+        },
     },
     grid: {
         y: 28
@@ -650,12 +684,13 @@ myChart7.setOption({
 var myChart8 = echarts.init(document.getElementById("myChart8"));
 myChart8.setOption(getRoseEcharts());
 myChart8.setOption({
+
     color: ['#66ccff', '#4397f7'],
     legend: {
         show: true,
         textStyle: {
             color: '#66ccff',
-            fontSize: 11,
+            fontSize: 8,
         },
         orient: 'vertical',  //布局  纵向布局
         data: ['量产一致型号数', '量产不一致型号数'],
@@ -710,6 +745,9 @@ var labelSetting = {
     }
 };
 myChart9.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#66ccff', '#a5fff1'],
     legend: {
         show: true,
@@ -832,6 +870,9 @@ myChart9.setOption({
 var myChart10 = echarts.init(document.getElementById("myChart10"));
 myChart10.setOption(getBarEcharts());
 myChart10.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#00e673', '#66ffcc'],
     legend: {
         show: true,
@@ -960,7 +1001,7 @@ myChart11.setOption({
         show: true,
         textStyle: {
             color: '#66ccff',
-            fontSize: 11,
+            fontSize: 8,
         },
         orient: 'vertical',  //布局  纵向布局
         data: ['共产一致型号数', '共产不一致型号数'],
@@ -1004,6 +1045,9 @@ myChart11.setOption({
 var myChart12 = echarts.init(document.getElementById("myChart12"));
 myChart12.setOption(getBarEcharts());
 myChart12.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#66ccff', '#a5fff1'],
     legend: {
         show: true,
@@ -1126,6 +1170,9 @@ myChart12.setOption({
 var myChart13 = echarts.init(document.getElementById("myChart13"));
 myChart13.setOption(getBarEcharts());
 myChart13.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#00e673', '#66ffcc'],
     legend: {
         show: true,
@@ -1304,6 +1351,9 @@ myChart14.setOption({
 var myChart15= echarts.init(document.getElementById("myChart15"));
 myChart15.setOption(getBarEcharts());
 myChart15.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#66ccff', '#a5fff1'],
     legend: {
         show: true,
@@ -1430,6 +1480,9 @@ myChart15.setOption({
 var myChart16 = echarts.init(document.getElementById("myChart16"));
 myChart16.setOption(getBarEcharts());
 myChart16.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#00e673', '#66ffcc'],
     legend: {
         show: true,
@@ -1609,6 +1662,9 @@ myChart17.setOption({
 var myChart18= echarts.init(document.getElementById("myChart18"));
 myChart18.setOption(getBarEcharts());
 myChart18.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#66ccff', '#a5fff1'],
     legend: {
         show: true,
@@ -1732,6 +1788,9 @@ myChart18.setOption({
 var myChart19 = echarts.init(document.getElementById("myChart19"));
 myChart19.setOption(getBarEcharts());
 myChart19.setOption({
+    textStyle:{
+        fontSize:8
+    },
     color: ['#00e673', '#66ffcc'],
     legend: {
         show: true,
