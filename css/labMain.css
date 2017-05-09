@@ -1,0 +1,308 @@
+@charset "utf-8";
+/* CSS Document */
+/*清除浮动代码*/ 
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0;line-height:0;}
+.clearfloat{zoom:1}
+
+@media screen and (min-width: 7680px){
+	body{
+		font-size:62px;
+	}
+
+	
+	}
+
+body{
+	color:#64ccff;
+	}
+/*content star*/
+#labMain_content{
+	
+	width:133.33%;
+	height:100%;
+	
+  /* background: url("../img/bg_star.png") center center no_repeat ;
+  background-size: 100%;*/
+  background:url(../img/bg_star2.jpg) center center no-repeat;
+	background-size:cover;
+	
+	}
+/*content end*/
+
+/*content top star*/
+#labMain_content_top{
+	height:10%;
+	display: flex;
+    flex-direction: row;
+	
+	
+	
+	}
+
+#labMain_ct_left{
+	flex:3;
+  background:url(../img/labMain/labtitle_bg.png) 0 0 no-repeat;
+   background-size:cover;
+	
+}	
+
+
+	
+#labMain_ct_left h1 {
+	width:100%;
+    margin: 1% auto 0;
+    position: relative;
+    padding: 1% 0;
+   /* padding-left: 8%;*/
+    font-size: 2em;
+    letter-spacing: .05em;
+    color: #66CCFE;	
+ 
+   
+   text-align:center;
+}
+
+	
+	
+	
+#labMain_ct_right{
+	flex:1;
+	text-align:center;
+	margin-top:1.2em;
+	}		
+#labMain_ct_right img{
+	width:1.8em;
+	height:1.8em;
+	margin-bottom:.5em;
+	
+	}	
+/*content bottom star*/	
+#labMain_content_bottom{
+	height:90%;
+	
+	display: flex;
+    flex-direction: row;
+	
+	
+}
+
+#labMain_cb_left{
+	flex:3;
+	background:url(../img/labMain/lab_left_border.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	position:relative;
+	margin:1em;
+	display:flex;
+	flex-direction: row;
+	}
+#labMain_cb_left .lab_title{
+	font-size:1.3em;
+	position:absolute;
+	top:0.3em;
+	left:7.4em;
+	
+	
+	}
+#labMain_cbl_one{
+	flex:1;
+	height:100%;
+	
+	
+}
+#labMain_cbl_one img{
+	width:90%;
+	margin:4em 3em ;
+	vertical-align:middle;
+	
+}
+#labMain_cbl_two{
+    flex:1;	
+	
+	height:100%;
+	display:flex;
+	flex-direction: column;
+	
+}
+
+#labMain_cblt_top{
+	flex:1;
+	margin:1em;
+	display:flex;
+	flex-direction: column;
+}
+#labMain_cblt_tone{
+	flex:1;
+	
+	}
+
+	
+
+#labMain_cblt_tone h3,#labMain_cblt_ttwo h3{
+	font-size:1.2em;
+	margin:2em;
+	
+	height:3em;
+	line-height:3em;
+	width:10em;
+	background:url(../img/sheshiState/gznx-bg.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	padding-left:3em;
+	
+	
+	}
+#labMain_cblt_tone p,#labMain_cblt_ttwo p{
+	margin:1em;
+	
+	}
+#labMain_cblt_ttwo{
+	flex:2;
+	/*background-color:#FC6;*/
+	
+	}		
+#labMain_cblt_bottom{
+	flex:1;
+	/*background:red;*/
+	margin:1em;
+	
+	
+	
+	}	
+#labMain_cb_right{
+	flex:1;
+	display:flex;
+	flex-direction: column;
+	}
+#labMain_cbr_one{
+	flex:1;
+	display:flex;
+	flex-direction: row;
+	margin:1em;
+	background:url(../img/labMain/lab_right_border.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	position:relative;
+	
+	
+	}
+.lab_one_title{
+	position:absolute;
+	left:3.6em;
+	top:.3em;
+	
+	
+	}	
+#labMain_cbr_two{
+	flex:1;
+		display:flex;
+	flex-direction: row;
+	background:url(../img/labMain/lab_right_border.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	margin:1em;
+	position:relative;
+	
+	
+	}
+#labMain_cbr_three{
+	flex:1;
+		display:flex;
+	flex-direction: row;
+	background:url(../img/labMain/lab_right_border.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	margin:1em;
+	position:relative;
+	
+	
+	}
+	
+#labMain_cbro_ul{
+	flex:2;
+	
+	
+	
+	
+	
+}
+	
+#labMain_cbro_ul ul{
+	margin:2em auto;
+	width:100%;
+	height:80%;
+	
+	
+	}
+	
+	
+#labMain_cbro_ul ul li{
+	padding:.5em .1em;
+	width:100%;
+	margin:.5em;
+	text-align:center;
+}
+#labMain_cbro_ul  .li_bg{
+	width:1.8em;
+	height:1.8em;
+	background:red;
+	float:left;
+	background:url(../img/labMain/lab_status.png) 0 0 no-repeat;
+	background-size:100% 100%;
+	
+	
+	}
+
+#labMain_cbro_ul ul li a{
+	font-size:0.3em;
+	width:5em;
+	text-align:left;
+	
+	
+	}
+#labMain_cbr_three 	 #labMain_cbro_ul ul li{
+	padding:20% 2%;
+	}	
+ 		
+#labMain_cbro_content{
+	flex:6;
+	border:1px solid #00ccff;
+	margin:2.2em 1em 1em 1em;
+	
+	
+	}
+	
+@media screen and (min-width: 7680px){
+#labMain_cbl_one img{
+	
+	margin:3em ;
+	
+}
+#labMain_cb_left .lab_title{
+	font-size:1.3em;
+	position:absolute;
+	top:0.3em;
+	left:10em;
+	
+	
+}
+#labMain_cbro_ul ul{
+	margin: 2em 1.3em 1em 1em;
+	width:100%;
+	height:80%;
+	
+	
+	}
+
+
+#labMain_cbro_ul ul li a{
+	font-size:1em;
+	text-align:left;
+	
+	
+	}
+.lab_one_title{
+	position:absolute;
+	left:5.5em;
+	top:0.3em;
+	
+	
+	}	
+	
+	
+	}
