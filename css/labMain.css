@@ -1,5 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
+
+/**实验室公共布局css 放公共数据*/
 /*清除浮动代码*/ 
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0;line-height:0;}
 .clearfloat{zoom:1}
@@ -11,10 +13,52 @@
 
 	
 	}
+	
+@media screen and (min-width: 7680px){
+#labMain_cbl_one img{
+	
+	margin:3em ;
+	
+}
+#labMain_cb_left .lab_title{
+	font-size:1.3em;
+	position:absolute;
+	top:0.3em;
+	left:10em;
+	
+	
+}
+#labMain_cbro_ul ul{
+	margin: 2em 1.3em 1em 1em;
+	width:100%;
+	height:80%;
+	
+	
+	}
+
+
+#labMain_cbro_ul ul li a{
+	font-size:1em;
+	text-align:left;
+	
+	
+	}
+.lab_one_title{
+	position:absolute;
+	left:5.5em;
+	top:0.3em;
+	
+	
+	}	
+	
+	
+	}	
 
 body{
 	color:#64ccff;
 	}
+	
+/**中海实验室  labMain start**/	
 /*content star*/
 #labMain_content{
 	
@@ -225,7 +269,7 @@ body{
 #labMain_cbro_ul ul{
 	margin:2em auto;
 	width:100%;
-	height:80%;
+	height:70%;
 	
 	
 	}
@@ -267,42 +311,6 @@ body{
 	
 	}
 	
-@media screen and (min-width: 7680px){
-#labMain_cbl_one img{
-	
-	margin:3em ;
-	
-}
-#labMain_cb_left .lab_title{
-	font-size:1.3em;
-	position:absolute;
-	top:0.3em;
-	left:10em;
-	
-	
-}
-#labMain_cbro_ul ul{
-	margin: 2em 1.3em 1em 1em;
-	width:100%;
-	height:80%;
-	
-	
-	}
 
-
-#labMain_cbro_ul ul li a{
-	font-size:1em;
-	text-align:left;
 	
-	
-	}
-.lab_one_title{
-	position:absolute;
-	left:5.5em;
-	top:0.3em;
-	
-	
-	}	
-	
-	
-	}
+/**中海实验室 labMain end**/	

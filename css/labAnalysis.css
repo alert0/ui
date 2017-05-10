@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+.lab_main{
+	
+	 width:100%; 
+	display:flex;
+	flex-direction: column;
+	margin:1.5em auto;
+	
+	
+	
+	}
+.la_top{
+	flex:1;
+	margin: .5em 1em;
+	display:flex;
+	flex-direction: row;
+	
+	}
+.la_data_left{
+	flex:1;
+	margin:.5em;
+	background:url(../img/labMain/border-short%20.png)0 0 no-repeat;
+	background-size:100% 100%;
+	
+	}	
+.la_data_left h3{
+	color:#fff;
+	margin:.5em auto;
+	text-align:center;
+	
+	}
+	
+.la_datal_content{
+	width:90%;
+	margin:0 auto;
+	
+	}	
+	
+.la_datal_legend{
+	float:left;
+	height:100%;
+	width:60%;
+	
+	}	
+	
+.la_datal_echart{
+	float:left;
+	background:red;
+	height:100%;
+	width:40%;
+	
+	}	
+	
+		
+.la_data_right{
+	flex:4;
+	margin:.5em;
+	background:url(../img/labMain/border-long.png)0 0 no-repeat;
+	background-size:100% 100%;
+	
+	
+	}		
+	
+.la_center{
+	flex:1;
+	background:blue;
+	margin: .5em 1em;
+	
+	}		
+.la_bottom{
+	flex:1;
+	background:yellow;
+	margin: .5em 1em;
+	
+	}	
