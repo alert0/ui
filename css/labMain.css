@@ -206,7 +206,7 @@ a,a:hover{color:#64ccff;}
 }
 .labMain_cbro_content{
 	flex:4;
-	border:1px solid #00ccff;
+	/*border:1px solid #00ccff;*/
 	margin:7% 2% 5% 1%;
 	
 	}
@@ -304,7 +304,12 @@ a,a:hover{color:#64ccff;}
 	}
 	
 	
-
+.labMain_cbro_content img{
+	width:98%;
+	height:98%;
+	margin:1%;
+	
+	}
 
  		
 
