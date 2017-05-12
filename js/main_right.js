@@ -424,6 +424,7 @@ myChart2.setOption(option);
 var myChart3 = echarts.init(document.getElementById("myChart3"));
 myChart3.setOption(getBarEcharts());
 var bar_chip = '../img/bar_chip.png';
+
 myChart3.setOption({
     textStyle:{
         fontSize:8

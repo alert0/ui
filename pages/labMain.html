@@ -13,21 +13,34 @@
 <body>
 <div id="labMain_content">
 
-<div id="labMain_content_top">
+<div id="labMain_content_top" style="border:1px solid red" >
 
-<div id="labMain_ct_left">
+
+
 
 <h1>中海博瑞介绍</h1>
 
-</div><!--labMain_ct_left-->
+
+
+
 <div id="labMain_ct_right">
-<p><img src="../img/labMain/lab_status.png"></p>
+
+
+<p><img src="../img/labMain/home.png"></p>
 <h3>中海博睿实验室</h3>
-</div><!--labMain_ct_right-->
+</div>
 
-<div></div>
+<div>
 
-</div><!--content_top-->
+
+</div>
+
+
+
+
+</div><!--头部content_top-->
+
+
 
 <div id="labMain_content_bottom">
 
@@ -81,11 +94,6 @@
 
 </div><!--labMain_cbl_two-->
 
-
-
-
-
-
 </div><!--labMain_cb_left-->
 
 
@@ -97,10 +105,10 @@
 
 
 
-<ul >
-<li><span class="li_bg"></span><a>实验室状态</a></li>
-<li><span class="li_bg"></span><a>设备状态</a></li>
-<li><span class="li_bg"></span><a>订单状态</a></li>
+<ul>
+<li><span class="li_bg li_bg_01"></span><a>实验室状态</a></li>
+<li><span class="li_bg li_bg_02"></span><a>设备状态</a></li>
+<li><span class="li_bg li_bg_03"></span><a>订单状态</a></li>
 </ul>
 
 </div><!--labMain_cbro_ul-->
@@ -120,44 +128,68 @@
 </div><!--labMain_cbr_one-->
 
 <div id="labMain_cbr_two">
+
 <h3 class="lab_one_title" >数据分析</h3>
 <div id="labMain_cbro_ul">
 
 
 
-<ul>
-<li><span class="li_bg"></span><a>一次合格率</a></li>
-<li><span class="li_bg"></span><a>订单及时率</a></li>
-<li><span class="li_bg"></span><a>用户满意度</a></li>
+<ul >
+<li><span class="li_bg li_bg_04"></span><a>一次合格率</a></li>
+<li><span class="li_bg li_bg_05"></span><a>订单及时率</a></li>
+<li><span class="li_bg li_bg_06"></span><a>用户满意度</a></li>
 </ul>
 
 </div><!--labMain_cbro_ul-->
 
 <div id="labMain_cbro_content">
-content
+
+<div></div>
+
+
+
+
+
 </div><!--labMain_cbr_content-->
+
+
+
 
 
 
 </div><!--labMain_cbr_two-->
 <div id="labMain_cbr_three">
-<h3 class="lab_one_title" >实时监测</h3>
+
+<h3 class="lab_one_title" >实施监测</h3>
 <div id="labMain_cbro_ul">
 
 
 
-<ul>
-<li><span class="li_bg"></span><a>视频监控</a></li>
-<li><span class="li_bg"></span><a>曲线监控</a></li>
+<ul >
+<li><span class="li_bg li_bg_07"></span><a>视频监控</a></li>
+<li><span class="li_bg li_bg_08"></span><a>曲线监控</a></li>
 </ul>
 
 </div><!--labMain_cbro_ul-->
 
 <div id="labMain_cbro_content">
-content
+
+<div></div>
+
+
+
+
+
 </div><!--labMain_cbr_content-->
 
+
+
+
+
 </div><!--labMain_cbr_three-->
+
+
+
 
 </div>
 <!--labMain_cb_right-->
@@ -169,9 +201,61 @@ content
 
 
 
+
+
+
+
+
+
 </div><!--content-->
 
 
 
 </body>
 </html>
+
+<script src="../asserts/js/jquery.js"></script>
+<script src="../asserts/echarts/echarts-3.5.2.js"></script>
+
+
+
+
+
+
+<script>
+var bodyScale = 1;//原始比例1
+$(document).ready(function(e) {
+	
+	
+	
+		pageResize();
+	
+		
+    
+    function pageResize() {
+        var h = $(window).height();
+		
+		var w=h * 16 * 7 / (9 * 3);
+		
+       // $("#labMain_content").css("width", h * 16 * 7 / (9 * 3));
+	    $("#labMain_content").css("width", h * 16 * 4/ (9 * 3));
+        var bodyFontSize = h / 595 * 100 + "%";
+		
+        bodyScale = h / 595;
+		
+		
+     // $("body").css("font-size", bodyScale);
+       // console.log("屏幕高度：" + h + ", body字号：" + bodyFontSize)
+    }
+	
+	//alert(bodyScale);
+	
+
+			
+			
+	
+	
+	
+	
+});
+</script>
