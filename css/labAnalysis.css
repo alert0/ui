@@ -13,8 +13,8 @@
 	
 	}
 	
-#labMain_cb_left .lab_title {
-    left: 7em;
+.labMain_cb_left .lab_title {
+    left:12.5%;
 }
 .la_top{
 	flex:1;
@@ -28,6 +28,7 @@
 	margin:1em .5em .5em .5em;
 	background:url(../img/labMain/border-short%20.png)0 0 no-repeat;
 	background-size:100% 100%;
+	height:100%;
 	
 	}	
 .la_data_left h3{
@@ -76,6 +77,7 @@
 		
 .la_data_right{
 	flex:4;
+	height:100%;
 	margin:1em .5em .5em .5em;
 	background:url(../img/labMain/border-long.png)0 0 no-repeat;
 	background-size:100% 100%;
@@ -113,7 +115,7 @@
 	height:90%;
 	
 }
-#labMain_cb_left .lab_title {
+.labMain_cb_left .lab_title {
     left: 10em;
 }
 
@@ -134,7 +136,7 @@
 	height:90%;
 	
 }
-#labMain_cb_left .lab_title {
+.labMain_cb_left .lab_title {
     left: 8em;
 }
 	

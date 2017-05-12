@@ -10,9 +10,9 @@
 </head>
 
 <body>
-<div id="labMain_content">
+<div class="labMain_content">
  
- <div id="labMain_content_top" >
+ <div class="labMain_content_top" >
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-<div id="labMain_ct_right">
+<div class="labMain_ct_right">
 
 
 <p><img src="../img/labMain/home.png"></p>
@@ -40,8 +40,8 @@
   </div>
   <!--content_top-->
   
-  <div id="labMain_content_bottom" >
-    <div id="labMain_cb_left" >
+  <div class="labMain_content_bottom" >
+    <div class="labMain_cb_left" >
       <h3 class="lab_title">数据分析</h3>
       <div class="lab_main"  >
       
@@ -155,10 +155,10 @@
     </div>
     <!--labMain_cb_left-->
     
-    <div id="labMain_cb_right">
-      <div id="labMain_cbr_one">
+    <div class="labMain_cb_right">
+      <div class="labMain_cbr_one">
         <h3 class="lab_one_title" >运营状态</h3>
-        <div id="labMain_cbro_ul">
+        <div class="labMain_cbro_ul">
           <ul >
             <li><span class="li_bg li_bg_01"></span><a>实验室状态</a></li>
             <li><span class="li_bg li_bg_02"></span><a>设备状态</a></li>
@@ -167,7 +167,7 @@
         </div>
         <!--labMain_cbro_ul-->
         
-        <div id="labMain_cbro_content">
+        <div class="labMain_cbro_content">
           qqqqqq
         </div>
         <!--labMain_cbr_content--> 
@@ -175,9 +175,9 @@
       </div>
       <!--labMain_cbr_one-->
       
-      <div id="labMain_cbr_two">
+      <div class="labMain_cbr_two">
         <h3 class="lab_one_title" >数据分析</h3>
-        <div id="labMain_cbro_ul">
+        <div class="labMain_cbro_ul">
           <ul>
             <li><span class="li_bg li_bg_04"></span><a>一次合格率</a></li>
             <li><span class="li_bg li_bg_05"></span><a>订单及时率</a></li>
@@ -186,22 +186,23 @@
         </div>
         <!--labMain_cbro_ul-->
         
-        <div id="labMain_cbro_content"> content </div>
+        <div class="labMain_cbro_content"> content </div>
         <!--labMain_cbr_content--> 
         
       </div>
       <!--labMain_cbr_two-->
-      <div id="labMain_cbr_three">
+      <div class="labMain_cbr_three">
         <h3 class="lab_one_title" >实时监测</h3>
-        <div id="labMain_cbro_ul">
+        <div class="labMain_cbro_ul">
           <ul>
+          <li><span></span></li>
             <li><span class="li_bg li_bg_07"></span><a>视频监控</a></li>
             <li><span class="li_bg li_bg_08"></span><a>曲线监控</a></li>
           </ul>
         </div>
         <!--labMain_cbro_ul-->
         
-        <div id="labMain_cbro_content"> content </div>
+        <div class="labMain_cbro_content"> content </div>
         <!--labMain_cbr_content--> 
         
       </div>
@@ -241,13 +242,13 @@ $(document).ready(function(e) {
 		
 		var w=h * 16 * 7 / (9 * 3);
 		
-       $("#labMain_content").css("width", h * 16 * 4 / (9 * 3));
-        var bodyFontSize = h / 595 * 100 + "%";
+       $(".labMain_content").css("width", h * 16 * 4 / (9 * 3));
+        var bodyFontSize = h / 638 * 100 + "%";
 		
-        bodyScale = h / 595;
+        bodyScale = h / 638;
 		
 		
-       // $("body").css("font-size", bodyFontSize);
+        $("body").css("font-size", bodyFontSize);
        // console.log("屏幕高度：" + h + ", body字号：" + bodyFontSize)
     }
 	
