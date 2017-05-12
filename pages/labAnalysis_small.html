@@ -21,7 +21,7 @@
 #labana_small_main_chart{
 	
 	height:100%;
-	padding:2em;
+	padding:1%;
 	flex:3;
 	background:url(../img/labMain/lab_left_border.png) 0 0 no-repeat;
 	background-size:100% 100%;
@@ -31,53 +31,15 @@
 	flex-direction: row;
 	}	
 .lab_title{
-	top:2em;
-	left:7em;
+	position:absolute;
+	top:4%;
+	left:13%;
 	
 	
 	}
 	
-.la_top,.la_center,.la_bottom { margin:.5em;}
 
-@media screen and (max-width: 1920px){
-	
-}
-@media screen and (max-width: 1366px){
-	body{
-		font-size:16px;
-		}
-	
-}
-@media screen and (max-width: 1280px){
-	body{
-		font-size:14px;
-		}
-	
-}
-@media screen and (max-width: 960px){
-	body{
-		font-size:12px;
-		}
-	
-}
-@media screen and (max-width: 854px){
-	body{
-		font-size:10px;
-		}
-	
-}
-@media screen and (max-width: 800px){
-	body{
-		font-size:8px;
-		}
-	
-}
-@media screen and (max-width: 720px){
-	body{
-		font-size:6px;
-		}
-	
-}
+
 
 </style>
 </head>
@@ -87,16 +49,16 @@
 <div class="labana_small_main">
 
 
- <div id="labana_small_main_chart" >
+ <div id="labana_small_main_chart"  >
  
  
       <h3 class="lab_title">数据分析</h3>
-      <div class="lab_main"  >
+      <div class="lab_main" style="border:1px solid blur;">
       
         <div class="la_top" >
           <div class="la_data_left" >
             <h3>一次合格率</h3>
-            <div class="la_datal_content clearfloat"  >
+            <div class="la_datal_content clearfloat" >
               <div class="la_datal_legend" >
                 <ul>
                   <li>平均:95%</li>
@@ -158,7 +120,7 @@
         </div><!--center-->
         
         
-        <div class="la_bottom">
+       <div class="la_bottom">
         
         
          <div class="la_data_left" >
@@ -237,9 +199,9 @@ $(document).ready(function(e) {
 		var w=h * 16 * 7 / (9 * 3);
 		
        // $("#content").css("width", h * 16 * 7 / (9 * 3));
-        var bodyFontSize = h / 595 * 100 + "%";
+        var bodyFontSize = h / 638 * 100 + "%";
 		
-        bodyScale = h / 595;
+        bodyScale = h / 638;
        $("body").css("font-size", bodyFontSize);
        // console.log("屏幕高度：" + h + ", body字号：" + bodyFontSize)
     }
@@ -383,7 +345,7 @@ var labelSetting = {
 
 			var option = {
 			 textStyle:{
-        fontSize:8
+        fontSize:bodyScale*8
     },
     yAxis: [
         {
